@@ -63,8 +63,8 @@ CREATE TABLE listes.mortiers (
 INSERT INTO listes.mortiers
   (nom)
 VALUES
-  ('Calcaire'), -- TODO
-  ('Marmor');
+  ('Mortier 1'), -- TODO
+  ('Mortier 2');
 
 
 -- Materiel
