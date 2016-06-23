@@ -52,8 +52,9 @@ CREATE TABLE listes.pierres (
 INSERT INTO listes.pierres
   (nom)
 VALUES
-  ('Calcaire'), -- TODO
-  ('Marmor');
+  ('Calcaire Hautrivien'),
+  ('Grès coquillier'),
+  ('Tuff');
 
 CREATE TABLE listes.mortiers ( 
   mortier_id           SERIAL PRIMARY KEY,
@@ -63,8 +64,9 @@ CREATE TABLE listes.mortiers (
 INSERT INTO listes.mortiers
   (nom)
 VALUES
-  ('Mortier 1'), -- TODO
-  ('Mortier 2');
+  ('Romain'),
+  ('TRA 2012'),
+  ('Cimenteux');
 
 
 -- Materiel
