@@ -14,20 +14,20 @@ DROP TYPE IF EXISTS site.expo;
 
 CREATE TABLE site.monument ( 
   monument_num   INTEGER PRIMARY KEY,
-  monument_nom   VARCHAR,
+  monument_nom   VARCHAR(),
   geom           geometry(MultiPolygon, 2056)
 );
 
 CREATE TABLE site.secteur ( 
   secteur_id          SERIAL PRIMARY KEY,
-  secteur_num_2013    INTEGER,
+  secteur_nom         VARCHAR(3),
   fk_monument         INTEGER REFERENCES site.monument (monument_num),
   geom                geometry(Polygon, 2056)
 );
 
 CREATE TABLE site.mur ( 
   mur_id              SERIAL PRIMARY KEY,
-  mur_num_2013        INTEGER,
+  mur_nom             VARCHAR(4),
   fk_secteur          INTEGER REFERENCES site.monument (monument_num)
 );
 
@@ -36,7 +36,7 @@ CREATE TYPE site.expo AS ENUM ('N', 'E', 'S', 'W');
 CREATE TABLE site.surface ( 
   surface_id          SERIAL PRIMARY KEY,
   exposition          site.expo,
-  mur_num_1998        VARCHAR,
+  mur_nom             VARCHAR(3),
   geom_frontal        geometry(Polygon, 1),      -- TODO: FIND USEFUL CRS
   geom_3d             geometry(Polygon, 2056, 3),
   fk_mur              INTEGER REFERENCES site.mur (mur_id)
