@@ -18,3 +18,5 @@ with open('mur_secteur.csv', 'rb') as csvfile:
             LEFT JOIN site.secteur ON secteur_nom = %(secteur_nom)s
             WHERE mur_nom = %(mur_nom)s;
         """, {'mur_nom': mur_secteur[0], 'secteur_nom': mur_secteur[1]})
+
+conn.commit()
