@@ -29,7 +29,8 @@ M163,ba1
 M129,ba1
 M159,ba1
 M164,ba1
-M160,"ba1, ad1"
+M160,ba1
+M160,ad1
 M49,ad1
 M51,ad1
 M170,ad1
@@ -44,10 +45,25 @@ M172,ad1
 M46,ad1
 M104,ad1
 M124,ad1
-M11,"cu1 , cu2, cu3, cu4, cu5, cu6"
-M22,"cu1 , cu2, cu3, cu4, cu5, cu6"
+M11,cu1
+M11,cu2
+M11,cu3
+M11,cu4
+M11,cu5
+M11,cu6
+M22,cu1
+M22,cu2
+M22,cu3
+M22,cu4
+M22,cu5
+M22,cu6
 M57,cu1
-M50,"cu1 , cu2, cu3, cu4, cu5, cu6"
+M50,cu1
+M50,cu2
+M50,cu3
+M50,cu4
+M50,cu5
+M50,cu6
 M56,cu1
 M55,cu1
 M53,cu1
@@ -100,7 +116,8 @@ M34,ad2
 M91,ad2
 M93,ad2
 M90,ad2
-M92,"ad2, ba2"
+M92,ad2
+M92,ba2
 M89,ba2
 M116,ba2
 M88,ba2
@@ -120,8 +137,10 @@ M8,ad2
 M10,ad2
 M94,ad2
 M95,ad2
-M31,"ad2 , ba2"
-M32,"ad2, ba2"
+M31,ad2
+M31,ba2
+M32,ad2
+M32,ba2
 M33,ba2
 M176,ba2
 M99,ba2
