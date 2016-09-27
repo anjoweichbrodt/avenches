@@ -1,3 +1,17 @@
+# Requires a service pg_avenches to be configured on the machine
+#
+# On linux create a file $HOME/.pg_service.conf with
+# the following content:
+# 
+# [pg_avenches]
+# host=46.101.216.29
+# port=5432
+# dbname=pilot
+# user={username}
+# password={password}
+
+
+
 import psycopg2
 import csv
 
