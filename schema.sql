@@ -31,7 +31,17 @@ CREATE TABLE site.mur (
   fk_secteur          INTEGER REFERENCES site.monument (monument_num)
 );
 
-CREATE TYPE site.expo AS ENUM ('N', 'E', 'S', 'W');
+CREATE TYPE site.expo AS ENUM (
+  'S'
+  'SE'
+  'E'
+  'NE'
+  'N'
+  'NO'
+  'O'
+  'SO'
+  '00'
+);
 
 CREATE TABLE site.surface ( 
   surface_id          SERIAL PRIMARY KEY,
