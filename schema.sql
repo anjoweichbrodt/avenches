@@ -4,6 +4,7 @@ CREATE SCHEMA IF NOT EXISTS site;
 CREATE EXTENSION IF NOT EXISTS postgis;
 
 DROP TABLE IF EXISTS site.monument CASCADE;
+DROP TABLE IF EXISTS site.mur_secteur CASCADE;
 DROP TABLE IF EXISTS site.secteur CASCADE;
 DROP TABLE IF EXISTS site.mur CASCADE;
 DROP TABLE IF EXISTS site.surface CASCADE;
@@ -13,33 +14,39 @@ DROP TABLE IF EXISTS listes.mortiers CASCADE;
 DROP TYPE IF EXISTS site.expo;
 
 CREATE TABLE site.monument ( 
-  monument_num   INTEGER PRIMARY KEY,
-  monument_nom   VARCHAR(),
+  monument_id    INTEGER PRIMARY KEY,
+  monument_nom   VARCHAR,
   geom           geometry(MultiPolygon, 2056)
 );
 
 CREATE TABLE site.secteur ( 
   secteur_id          SERIAL PRIMARY KEY,
   secteur_nom         VARCHAR(3),
-  fk_monument         INTEGER REFERENCES site.monument (monument_num),
+  fk_monument         INTEGER REFERENCES site.monument (monument_id),
   geom                geometry(Polygon, 2056)
 );
 
 CREATE TABLE site.mur ( 
   mur_id              SERIAL PRIMARY KEY,
   mur_nom             VARCHAR(4),
-  fk_secteur          INTEGER REFERENCES site.monument (monument_num)
+  visible             boolean
+);
+
+CREATE TABLE site.mur_secteur (
+  fk_mur              INTEGER REFERENCES site.mur (mur_id),
+  fk_secteur          INTEGER REFERENCES site.secteur (secteur_id),
+  PRIMARY KEY(fk_mur, fk_secteur)
 );
 
 CREATE TYPE site.expo AS ENUM (
-  'S'
-  'SE'
-  'E'
-  'NE'
-  'N'
-  'NO'
-  'O'
-  'SO'
+  'S',
+  'SE',
+  'E',
+  'NE',
+  'N',
+  'NO',
+  'O',
+  'SO',
   '00'
 );
 
@@ -49,7 +56,8 @@ CREATE TABLE site.surface (
   mur_nom             VARCHAR(3),
   geom_frontal        geometry(Polygon, 1),      -- TODO: FIND USEFUL CRS
   geom_3d             geometry(Polygon, 2056, 3),
-  fk_mur              INTEGER REFERENCES site.mur (mur_id)
+  fk_mur              INTEGER REFERENCES site.mur (mur_id),
+  fk_secteur          INTEGER REFERENCES site.secteur (secteur_id)
 );
 
 -- Listes
