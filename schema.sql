@@ -47,7 +47,8 @@ CREATE TYPE site.expo AS ENUM (
   'NO',
   'O',
   'SO',
-  '00'
+  'VH',
+  'VB'
 );
 
 CREATE TABLE site.surface ( 
