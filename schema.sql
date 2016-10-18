@@ -71,9 +71,9 @@ CREATE TABLE listes.pierres (
 INSERT INTO listes.pierres
   (nom)
 VALUES
-  ('Calcaire Hautrivien'),
-  ('Grès coquillier'),
-  ('Tuff');
+  ('calcaire hautrivien'),
+  ('grès coquillier'),
+  ('tuff');
 
 CREATE TABLE listes.mortiers ( 
   mortier_id           SERIAL PRIMARY KEY,
@@ -83,10 +83,43 @@ CREATE TABLE listes.mortiers (
 INSERT INTO listes.mortiers
   (nom)
 VALUES
-  ('Romain'),
+  ('romain'),
   ('TRA 2012'),
-  ('Cimenteux');
+  ('cimenteux');
 
+CREATE TABLE listes.observation ( 
+  observation_id           SERIAL PRIMARY KEY,
+  nom                 VARCHAR
+);
+
+INSERT INTO listes.observation
+  (nom)
+VALUES
+  ('état'),
+  ('intervention');
+  
+ CREATE TABLE listes.designation ( 
+  designation_id           SERIAL PRIMARY KEY,
+  nom                 VARCHAR
+);
+
+INSERT INTO listes.designation.etat
+  (nom)
+VALUES
+  ('écaillage'),
+  ('fissure'),
+  ('joint manquant'),
+  ('lacune');
+  
+INSERT INTO listes.designation.intervention
+  (nom)
+VALUES
+  ('comblement'),
+  ('démolition'),
+  ('drainage'),
+  ('reconstitution'),
+  ('rejointoyage');
+  
 
 -- Materiel
 
