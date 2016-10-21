@@ -9,24 +9,27 @@ DROP TABLE IF EXISTS site.secteur CASCADE;
 DROP TABLE IF EXISTS site.mur CASCADE;
 DROP TABLE IF EXISTS site.surface CASCADE;
 DROP TABLE IF EXISTS site.materiel_zone CASCADE;
+DROP TABLE IF EXISTS site.observation CASCADE;
 DROP TABLE IF EXISTS listes.pierres CASCADE;
 DROP TABLE IF EXISTS listes.mortiers CASCADE;
+DROP TABLE IF EXISTS listes.mortiers CASCADE;
+DROP TABLE IF EXISTS listes.observations CASCADE;
 DROP TYPE IF EXISTS site.expo;
 
-CREATE TABLE site.monument ( 
+CREATE TABLE site.monument (
   monument_id    INTEGER PRIMARY KEY,
   monument_nom   VARCHAR,
   geom           geometry(MultiPolygon, 2056)
 );
 
-CREATE TABLE site.secteur ( 
+CREATE TABLE site.secteur (
   secteur_id          SERIAL PRIMARY KEY,
   secteur_nom         VARCHAR(3),
   fk_monument         INTEGER REFERENCES site.monument (monument_id),
   geom                geometry(Polygon, 2056)
 );
 
-CREATE TABLE site.mur ( 
+CREATE TABLE site.mur (
   mur_id              SERIAL PRIMARY KEY,
   mur_nom             VARCHAR(4),
   visible             boolean
@@ -51,7 +54,7 @@ CREATE TYPE site.expo AS ENUM (
   'VB'
 );
 
-CREATE TABLE site.surface ( 
+CREATE TABLE site.surface (
   surface_id          SERIAL PRIMARY KEY,
   exposition          site.expo,
   mur_nom             VARCHAR(3),
@@ -63,7 +66,7 @@ CREATE TABLE site.surface (
 
 -- Listes
 
-CREATE TABLE listes.pierres ( 
+CREATE TABLE listes.pierres (
   pierre_id           SERIAL PRIMARY KEY,
   nom                 VARCHAR
 );
@@ -75,8 +78,8 @@ VALUES
   ('grès coquillier'),
   ('tuff');
 
-CREATE TABLE listes.mortiers ( 
-  mortier_id           SERIAL PRIMARY KEY,
+CREATE TABLE listes.mortiers (
+  mortier_id          SERIAL PRIMARY KEY,
   nom                 VARCHAR
 );
 
@@ -87,47 +90,43 @@ VALUES
   ('TRA 2012'),
   ('cimenteux');
 
-CREATE TABLE listes.observation ( 
-  observation_id           SERIAL PRIMARY KEY,
-  nom                 VARCHAR
+CREATE TABLE listes.observations (
+   observations_id    SERIAL PRIMARY KEY,
+   type               VARCHAR
+   specification      VARCHAR
 );
 
-INSERT INTO listes.observation
-  (nom)
+INSERT INTO listes.observations
+   (nom)
 VALUES
-  ('état'),
-  ('intervention');
-  
- CREATE TABLE listes.designation ( 
-  designation_id           SERIAL PRIMARY KEY,
-  nom                 VARCHAR
-);
+   ('état','écaillage'),
+   ('état','fissure'),
+   ('état','joint manquant'),
+   ('état','lacune'),
+   ('intervention','comblement'),
+   ('intervention','démolition'),
+   ('intervention','drainage'),
+   ('intervention','reconstitution'),
+   ('intervention','rejointoyage');
 
-INSERT INTO listes.designation.etat
-  (nom)
-VALUES
-  ('écaillage'),
-  ('fissure'),
-  ('joint manquant'),
-  ('lacune');
-  
-INSERT INTO listes.designation.intervention
-  (nom)
-VALUES
-  ('comblement'),
-  ('démolition'),
-  ('drainage'),
-  ('reconstitution'),
-  ('rejointoyage');
-  
 
 -- Materiel
 
-CREATE TABLE site.materiel_zone ( 
+CREATE TABLE site.materiel_zone (
   materiel_zone_id     SERIAL PRIMARY KEY,
   date_saisie          DATE,
   surface              INTEGER REFERENCES site.surface(surface_id),
   pierre               INTEGER REFERENCES listes.pierres(pierre_id),
   mortier              INTEGER REFERENCES listes.mortiers(mortier_id),
+  geom                 geometry(Polygon, 1)
+);
+
+-- observation
+
+CREATE TABLE site.observation (
+  observation_id       SERIAL PRIMARY KEY,
+  date_saisie          DATE,
+  surface              INTEGER REFERENCES site.surface(surface_id),
+  observation          INTEGER REFERENCES listes.observations(observations_id),
   geom                 geometry(Polygon, 1)
 );
