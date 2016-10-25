@@ -92,12 +92,12 @@ VALUES
 
 CREATE TABLE listes.observations (
    observations_id    SERIAL PRIMARY KEY,
-   type               VARCHAR
+   type               VARCHAR,
    specification      VARCHAR
 );
 
 INSERT INTO listes.observations
-   (nom)
+   (type, specification)
 VALUES
    ('état','écaillage'),
    ('état','fissure'),
