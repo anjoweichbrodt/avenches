@@ -110,23 +110,21 @@ VALUES
    ('intervention','rejointoyage');
 
 
--- Materiel
+-- Zones
 
-CREATE TABLE site.materiel_zone (
-  materiel_zone_id     SERIAL PRIMARY KEY,
-  date_saisie          DATE,
-  surface              INTEGER REFERENCES site.surface(surface_id),
-  pierre               INTEGER REFERENCES listes.pierres(pierre_id),
-  mortier              INTEGER REFERENCES listes.mortiers(mortier_id),
-  geom                 geometry(Polygon, 1)
+CREATE TYPE site.zone_type AS ENUM (
+  'matériel',
+  'observation',
+  'entité'
 );
 
--- observation
-
-CREATE TABLE site.observation (
-  observation_id       SERIAL PRIMARY KEY,
+CREATE TABLE site.zone (
+  zone_id              SERIAL PRIMARY KEY,
   date_saisie          DATE,
+  type                 site.zone_type,
   surface              INTEGER REFERENCES site.surface(surface_id),
-  observation          INTEGER REFERENCES listes.observations(observations_id),
+  fk_pierre            INTEGER REFERENCES listes.pierres(pierre_id),
+  fk_mortier           INTEGER REFERENCES listes.mortiers(mortier_id),
+  fk_observation       INTEGER REFERENCES listes.observations(observations_id),
   geom                 geometry(Polygon, 1)
 );
