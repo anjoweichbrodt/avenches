@@ -59,7 +59,7 @@ CREATE TABLE site.surface (
   exposition          site.expo,
   mur_nom             VARCHAR(3),
   geom_frontal        geometry(Polygon, 1),      -- TODO: FIND USEFUL CRS
-  geom_3d             geometry(Polygon, 2056, 3),
+  geom_3d             geometry(PolygonZ, 2056, 3),
   fk_mur              INTEGER REFERENCES site.mur (mur_id),
   fk_secteur          INTEGER REFERENCES site.secteur (secteur_id)
 );
