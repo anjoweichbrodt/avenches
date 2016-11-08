@@ -1137,7 +1137,9 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>COALESCE( "surface_id", '&lt;NULL>' )</previewExpression>
       <vectorjoins/>
       <layerDependencies/>
-      <expressionfields/>
+      <expressionfields>
+        <field typeName="varchar" precision="-1" expression="CONCAT(attribute(get_feature('mur', 'mur_id', &quot;fk_mur&quot;), 'mur_nom' ), '-', &quot;exposition&quot;)" length="10" type="10" comment="" name="identifier"/>
+      </expressionfields>
       <defaults>
         <default field="surface_id" expression=""/>
         <default field="exposition" expression=""/>
@@ -1145,6 +1147,7 @@ def my_form_open(dialog, layer, feature):
         <default field="geom_frontal" expression=""/>
         <default field="fk_mur" expression=""/>
         <default field="fk_secteur" expression=""/>
+        <default field="identifier" expression=""/>
       </defaults>
       <map-layer-style-manager current="">
         <map-layer-style name=""/>
@@ -1167,6 +1170,9 @@ def my_form_open(dialog, layer, feature):
         </edittype>
         <edittype widgetv2type="TextEdit" name="fk_secteur">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="identifier">
+          <widgetv2config IsMultiline="0" fieldEditable="0" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
@@ -1396,6 +1402,7 @@ def my_form_open(dialog, layer, feature):
         <alias field="geom_frontal" index="3" name=""/>
         <alias field="fk_mur" index="4" name="Mur"/>
         <alias field="fk_secteur" index="5" name=""/>
+        <alias field="identifier" index="6" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -1409,6 +1416,7 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="1" type="actions"/>
           <column width="-1" hidden="0" type="field" name="mur_nom"/>
           <column width="-1" hidden="0" type="field" name="fk_secteur"/>
+          <column width="-1" hidden="0" type="field" name="identifier"/>
         </columns>
       </attributetableconfig>
       <editform>.</editform>
