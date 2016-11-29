@@ -20,8 +20,8 @@ DECLARE
   maxx INT;
 BEGIN
   SELECT
-  COALESCE(NEW.minimum_level, ST_YMIN(wkb_geometry)) AS minimum_level,
-  COALESCE(NEW.maximum_level, ST_YMAX(wkb_geometry)) AS maximum_level,
+  COALESCE(ST_YMIN(wkb_geometry), NEW.minimum_level) AS minimum_level,
+  COALESCE(ST_YMAX(wkb_geometry), NEW.maximum_level) AS maximum_level,
   wkb_geometry
   INTO import_surface
   FROM import.surfaces
@@ -45,7 +45,7 @@ BEGIN
                ST_MakePoint(ST_X(ST_PointN(NEW.baseline, 1)), ST_Y(ST_PointN(NEW.baseline, 1)), import_surface.minimum_level)
              ])
            ), 2056)
-           , import_surface.wkb_geometry
+           , ST_SetSRID(import_surface.wkb_geometry, 1)
            , NEW.exposition
            , NEW.fk_mur
            , NEW.fk_secteur
