@@ -1429,7 +1429,7 @@ def my_form_open(dialog, layer, feature):
         <columns>
           <column width="-1" hidden="0" type="field" name="surface_id"/>
           <column width="-1" hidden="0" type="field" name="exposition"/>
-          <column width="-1" hidden="0" type="field" name="geom_frontal"/>
+          <column width="631" hidden="0" type="field" name="geom_frontal"/>
           <column width="-1" hidden="0" type="field" name="fk_mur"/>
           <column width="-1" hidden="1" type="actions"/>
           <column width="-1" hidden="0" type="field" name="mur_nom"/>
@@ -2150,7 +2150,17 @@ def my_form_open(dialog, layer, feature):
 	control = dialog.findChild(QWidget, "MyLineEdit")
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
+      <editorlayout>tablayout</editorlayout>
+      <attributeEditorForm>
+        <attributeEditorField showLabel="1" index="3" name="exposition"/>
+        <attributeEditorField showLabel="1" index="4" name="fk_mur"/>
+        <attributeEditorField showLabel="1" index="5" name="fk_secteur"/>
+        <attributeEditorField showLabel="1" index="6" name="nomatlas"/>
+        <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="1" visibilityExpression="nomatlas is null" name="Level" groupBox="1" columnCount="1">
+          <attributeEditorField showLabel="1" index="1" name="minimum_level"/>
+          <attributeEditorField showLabel="1" index="2" name="maximum_level"/>
+        </attributeEditorContainer>
+      </attributeEditorForm>
       <widgets/>
       <conditionalstyles>
         <rowstyles/>
@@ -2175,8 +2185,8 @@ def my_form_open(dialog, layer, feature):
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +units=m +no_defs</proj4>
           <srsid>100003</srsid>
           <srid>0</srid>
-          <authid></authid>
-          <description></description>
+          <authid>USER:100003</authid>
+          <description> * Erzeugtes KBS (+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +units=m +no_defs)</description>
           <projectionacronym>somerc</projectionacronym>
           <ellipsoidacronym>bessel</ellipsoidacronym>
           <geographicflag>false</geographicflag>
@@ -2461,7 +2471,7 @@ def my_form_open(dialog, layer, feature):
           <column width="-1" hidden="0" type="field" name="nomsecteur"/>
           <column width="-1" hidden="0" type="field" name="anneeconst"/>
           <column width="-1" hidden="0" type="field" name="anneerest"/>
-          <column width="-1" hidden="0" type="field" name="nomatlas"/>
+          <column width="144" hidden="0" type="field" name="nomatlas"/>
           <column width="-1" hidden="0" type="field" name="anneesaisi"/>
           <column width="-1" hidden="1" type="actions"/>
         </columns>
