@@ -33,14 +33,28 @@ CREATE TABLE site.secteur (
 CREATE TABLE site.mur (
   mur_id              SERIAL PRIMARY KEY,
   mur_nom             VARCHAR(4),
+  fk_monument         INTEGER REFERENCES site.monument (monument_id)
+);
+
+-- Example nom: M11-cu3 ou M5-ca4
+CREATE TABLE site.mur_part (
+  mur_part_id         SERIAL PRIMARY KEY,
+  fk_mur              INTEGER REFERENCES site.mur (mur_id),
+  fk_secteur          INTEGER REFERENCES site.secteur (secteur_id),
   visible             boolean
 );
 
-CREATE TABLE site.mur_secteur (
-  fk_mur              INTEGER REFERENCES site.mur (mur_id),
-  fk_secteur          INTEGER REFERENCES site.secteur (secteur_id),
-  PRIMARY KEY(fk_mur, fk_secteur)
-);
+CREATE VIEW site.mur_part_avec_nom AS
+SELECT
+  mur_part_id,
+  CONCAT(mur.mur_nom, '_', secteur.secteur_nom) AS mur_part_nom,
+  fk_mur,
+  fk_secteur,
+  visible
+FROM site.mur_part
+LEFT JOIN site.mur ON mur.mur_id = mur_part.fk_mur_id
+LEFT JOIN site.secteur ON secteur.secteur_id = mur_part.fk_secteur_id
+)
 
 CREATE TYPE site.expo AS ENUM (
   'S',
@@ -61,8 +75,7 @@ CREATE TABLE site.surface (
   mur_nom             VARCHAR(3),
   geom_frontal        geometry(Polygon, 1),      -- TODO: FIND USEFUL CRS
   geom_3d             geometry(PolygonZ, 2056, 3),
-  fk_mur              INTEGER REFERENCES site.mur (mur_id),
-  fk_secteur          INTEGER REFERENCES site.secteur (secteur_id)
+  fk_mur_part         INTEGER REFERENCES site.mur_part (mur_part_id)
 );
 
 -- Listes
