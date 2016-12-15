@@ -32,7 +32,7 @@ CREATE TABLE site.secteur (
 
 CREATE TABLE site.mur (
   mur_id              SERIAL PRIMARY KEY,
-  mur_nom             VARCHAR(4),
+  mur_nom             VARCHAR(4) UNIQUE,
   fk_monument         INTEGER REFERENCES site.monument (monument_id)
 );
 
@@ -54,7 +54,7 @@ SELECT
 FROM site.mur_part
 LEFT JOIN site.mur ON mur.mur_id = mur_part.fk_mur_id
 LEFT JOIN site.secteur ON secteur.secteur_id = mur_part.fk_secteur_id
-)
+);
 
 CREATE TYPE site.expo AS ENUM (
   'S',
