@@ -5,16 +5,20 @@ CREATE SCHEMA IF NOT EXISTS import;
 CREATE EXTENSION IF NOT EXISTS postgis;
 
 DROP TABLE IF EXISTS site.monument CASCADE;
-DROP TABLE IF EXISTS site.mur_secteur CASCADE;
 DROP TABLE IF EXISTS site.secteur CASCADE;
 DROP TABLE IF EXISTS site.mur CASCADE;
 DROP TABLE IF EXISTS site.surface CASCADE;
+DROP TABLE IF EXISTS site.deteriotation_zone CASCADE;
+DROP TABLE IF EXISTS site.intervention_zone CASCADE;
 DROP TABLE IF EXISTS site.materiel_zone CASCADE;
-DROP TABLE IF EXISTS site.observation CASCADE;
-DROP TABLE IF EXISTS listes.pierres CASCADE;
-DROP TABLE IF EXISTS listes.mortiers CASCADE;
-DROP TABLE IF EXISTS listes.mortiers CASCADE;
-DROP TABLE IF EXISTS listes.observations CASCADE;
+DROP TABLE IF EXISTS site.entite_zone CASCADE;
+DROP TABLE IF EXISTS site.dating_zone CASCADE;
+DROP TABLE IF EXISTS listes.deteriotation CASCADE;
+DROP TABLE IF EXISTS listes.intervention CASCADE;
+DROP TABLE IF EXISTS listes.pierre CASCADE;
+DROP TABLE IF EXISTS listes.mortier CASCADE;
+DROP TABLE IF EXISTS listes.entite CASCADE;
+DROP TABLE IF EXISTS listes.dating_zone CASCADE;
 DROP TYPE IF EXISTS site.expo;
 
 CREATE TABLE site.monument (
@@ -78,67 +82,153 @@ CREATE TABLE site.surface (
   fk_mur_part         INTEGER REFERENCES site.mur_part (mur_part_id)
 );
 
+
 -- Listes
 
-CREATE TABLE listes.pierres (
-  pierre_id           SERIAL PRIMARY KEY,
-  nom                 VARCHAR
+
+-- deteriotation
+
+CREATE TABLE listes.deteriotation (
+   deteriotation_id  SERIAL PRIMARY KEY,
+   type              VARCHAR,
+   specification     VARCHAR,
 );
 
-INSERT INTO listes.pierres
-  (nom)
-VALUES
-  ('calcaire hautrivien'),
-  ('grès coquillier'),
-  ('tuff');
-
-CREATE TABLE listes.mortiers (
-  mortier_id          SERIAL PRIMARY KEY,
-  nom                 VARCHAR
-);
-
-INSERT INTO listes.mortiers
-  (nom)
-VALUES
-  ('romain'),
-  ('TRA 2012'),
-  ('cimenteux');
-
-CREATE TABLE listes.observations (
-   observations_id    SERIAL PRIMARY KEY,
-   type               VARCHAR,
-   specification      VARCHAR
-);
-
-INSERT INTO listes.observations
+INSERT INTO listes.deteriotation
    (type, specification)
 VALUES
-   ('état','écaillage'),
-   ('état','fissure'),
-   ('état','joint manquant'),
-   ('état','lacune'),
-   ('intervention','comblement'),
-   ('intervention','démolition'),
-   ('intervention','drainage'),
-   ('intervention','reconstitution'),
-   ('intervention','rejointoyage');
+   ('écaillage',NULL),
+   ('fissure',NULL),
+   ('joint manquant',NULL),
+   ('lacune',NULL);
 
+
+-- intervention
+
+CREATE TABLE listes.intervention (
+   intervention_id   SERIAL PRIMARY KEY,
+   type              VARCHAR,
+   specification     VARCHAR,
+);
+
+INSERT INTO listes.intervention
+   (type, specification)
+VALUES
+   ('comblement',NULL),
+   ('démolition',NULL),
+   ('drainage',NULL),
+   ('reconstitution',NULL),
+   ('rejointoyage',NULL);
+
+
+-- pierre
+
+CREATE TABLE listes.pierre (
+   pierre_id         SERIAL PRIMARY KEY,
+   type              VARCHAR,
+   specification     VARCHAR,
+);
+
+INSERT INTO listes.pierre
+   (type, specification)
+VALUES
+   ('calcaire','calcaire hautrivien'),
+   ('molasse','grès coquillier'),
+   ('calcaire','tuff');
+
+
+-- mortier
+
+CREATE TABLE listes.mortier (
+   mortier_id        SERIAL PRIMARY KEY,
+   type              VARCHAR,
+   specification     VARCHAR,
+);
+
+INSERT INTO listes.mortier
+   (type, specification)
+VALUES
+   ('chaux','romain'),
+   ('cimenteux','TRA 2012'),
+   ('chaux','TRA 2015');
+
+
+-- entite
+
+CREATE TABLE listes.entite (
+   entite_id         SERIAL PRIMARY KEY,
+   type              VARCHAR,
+   );
+
+INSERT INTO listes.entite
+   (type)
+VALUES
+   ('maçonnerie'),
+   ('chappe');
+
+
+-- dating
+
+CREATE TABLE listes.dating (
+   dating_id         SERIAL PRIMARY KEY,
+   type              VARCHAR,
+   );
+
+INSERT INTO listes.dating
+   (type)
+VALUES
+   ('romain'),
+   ('1910-1920'),
+   ('2012'),
+   ('2012'),
+   ('2013'),
+   ('2014'),
+   ('2015');
 
 -- Zones
 
-CREATE TYPE site.zone_type AS ENUM (
-  'matériel',
-  'observation',
-  'entité'
+
+CREATE TABLE site.deteriotation_zone (
+  zone_id              SERIAL PRIMARY KEY,
+  date_observation     DATE,
+  surface              INTEGER REFERENCES site.surface(surface_id),
+  fk_observation       INTEGER REFERENCES listes.deteriotation(deteriotation_id),
+  geom                 geometry(Polygon, 1)
 );
 
-CREATE TABLE site.zone (
+
+CREATE TABLE site.intervention_zone (
   zone_id              SERIAL PRIMARY KEY,
-  date_saisie          DATE,
-  type                 site.zone_type,
+  date_observation     DATE,
   surface              INTEGER REFERENCES site.surface(surface_id),
-  fk_pierre            INTEGER REFERENCES listes.pierres(pierre_id),
-  fk_mortier           INTEGER REFERENCES listes.mortiers(mortier_id),
-  fk_observation       INTEGER REFERENCES listes.observations(observations_id),
+  fk_observation       INTEGER REFERENCES listes.intervention(intervention_id),
+  geom                 geometry(Polygon, 1)
+);
+
+
+CREATE TABLE site.materiel_zone (
+  zone_id              SERIAL PRIMARY KEY,
+  date_observation     DATE,
+  surface              INTEGER REFERENCES site.surface(surface_id),
+  fk_pierre            INTEGER REFERENCES listes.pierre(pierre_id),
+  fk_mortier           INTEGER REFERENCES listes.mortier(mortier_id),
+  geom                 geometry(Polygon, 1)
+);
+
+
+CREATE TABLE site.entite_zone (
+  zone_id              SERIAL PRIMARY KEY,
+  date_observation     DATE,
+  surface              INTEGER REFERENCES site.surface(surface_id),
+  fk_observation       INTEGER REFERENCES listes.entite(entite_id),
+  geom                 geometry(Polygon, 1)
+);
+
+
+CREATE TABLE site.dating_zone (
+  zone_id              SERIAL PRIMARY KEY,
+  date_observation     DATE,
+  surface              INTEGER REFERENCES site.surface(surface_id),
+  fk_observation       INTEGER REFERENCES listes.dating(dating_id),
   geom                 geometry(Polygon, 1)
 );
