@@ -3,46 +3,30 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.8.2" last-position="0,0" last-zoom="1"
+<dbmodel pgmodeler-ver="0.8.2" last-position="0,0" last-zoom="0.75"
 	 default-schema="public" default-owner="postgres">
 <role name="orbe">
 </role>
 
-<database name="new_database">
+<database name="avenches" prepend-at-bod="true">
+	<prepended-sql><![CDATA[CREATE EXTENSION postgis;]]></prepended-sql>
 </database>
 
 <schema name="public" fill-color="#e1e1e1" sql-disabled="true">
 </schema>
 
 <schema name="orbe" rect-visible="true" fill-color="#e1e1e1">
-	<role name="postgres"/>
+	<role name="orbe"/>
 </schema>
 
-<table name="vegetation">
-	<schema name="orbe"/>
-	<role name="postgres"/>
-	<position x="700" y="300"/>
-	<column name="id" not-null="true">
-		<type name="int8"/>
-	</column>
-	<column name="type">
-		<type name="text"/>
-	</column>
-	<column name="mosaic">
-		<type name="varchar" length="6"/>
-	</column>
-	<column name="geometry">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
-	<constraint name="vegetation_pk" type="pk-constr" table="orbe.vegetation">
-		<columns names="id" ref-type="src-columns"/>
-	</constraint>
-</table>
+<schema name="orbe_observations" rect-visible="true" fill-color="#e1e1e1">
+	<role name="orbe"/>
+</schema>
 
 <table name="analysis">
-	<schema name="orbe"/>
-	<role name="postgres"/>
-	<position x="660" y="120"/>
+	<schema name="orbe_observations"/>
+	<role name="orbe"/>
+	<position x="1040" y="100"/>
 	<column name="id" not-null="true">
 		<type name="int8"/>
 	</column>
@@ -61,36 +45,22 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geometry">
+	<column name="geom">
 		<type name="geometry" spatial-type="POINT" variation="0" srid="2056"/>
 	</column>
-	<constraint name="analysis_pk" type="pk-constr" table="orbe.analysis">
+	<constraint name="analysis_pk" type="pk-constr" table="orbe_observations.analysis">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="monuments">
-	<schema name="orbe"/>
-	<role name="postgres"/>
-	<position x="200" y="120"/>
-	<column name="code" not-null="true">
-		<type name="varchar" length="2"/>
-	</column>
-	<column name="name">
-		<type name="text"/>
-	</column>
-	<column name="geometry">
-		<type name="geometry" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
-	</column>
-	<constraint name="monument_pk" type="pk-constr" table="orbe.monuments">
-		<columns names="code" ref-type="src-columns"/>
-	</constraint>
-</table>
+<schema name="sites" rect-visible="true" fill-color="#e1e1e1">
+	<role name="orbe"/>
+</schema>
 
-<table name="sectors">
+<table name="pavilions">
 	<schema name="orbe"/>
-	<role name="postgres"/>
-	<position x="200" y="280"/>
+	<role name="orbe"/>
+	<position x="460" y="100"/>
 	<column name="code" not-null="true">
 		<type name="varchar" length="6"/>
 	</column>
@@ -100,18 +70,18 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="monument">
 		<type name="varchar" length="2"/>
 	</column>
-	<column name="geometry">
+	<column name="geom">
 		<type name="geometry" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
-	<constraint name="sector_pk" type="pk-constr" table="orbe.sectors">
+	<constraint name="sector_pk" type="pk-constr" table="orbe.pavilions">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
 </table>
 
 <table name="mosaics">
 	<schema name="orbe"/>
-	<role name="postgres"/>
-	<position x="200" y="440"/>
+	<role name="orbe"/>
+	<position x="460" y="260"/>
 	<column name="code" not-null="true">
 		<type name="varchar" length="6"/>
 	</column>
@@ -121,7 +91,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="sector">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geometry">
+	<column name="geom">
 		<type name="geometry" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="mosaic_pk" type="pk-constr" table="orbe.mosaics">
@@ -130,13 +100,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 </table>
 
 <schema name="orbe_value_lists" rect-visible="true" fill-color="#e1e1e1">
-	<role name="postgres"/>
+	<role name="orbe"/>
 </schema>
 
 <table name="test_goals">
 	<schema name="orbe_value_lists"/>
-	<role name="postgres"/>
-	<position x="1280" y="140"/>
+	<role name="orbe"/>
+	<position x="1660" y="100"/>
 	<column name="code" not-null="true">
 		<type name="text"/>
 	</column>
@@ -149,12 +119,22 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<constraint name="test_goals_pk" type="pk-constr" table="orbe_value_lists.test_goals">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+drilling_resistance•drilling resistance•résistance à la perforation⸣
+determination_of_flora•determination of flora•détermination da la flore⸣
+temperature_measurement•temperature mesaurement•mésuration de temperature⸣
+qualitative_salt_ion_analysis•qualitative salt ion analysis•détermination qualitative des ions de sel⸣
+quantitative_salt_ion_analysis•quantitative salt ion analysis•détermination quantitative des ions de sel⸣
+salt_crystal_analysis•salt crystal analysis•détermination de cristal de sel⸣
+stone_determination•stone determination•détermination de pierre]]>
+	</initial-data>
 </table>
 
 <table name="vegetation_types">
 	<schema name="orbe_value_lists"/>
-	<role name="postgres"/>
-	<position x="1280" y="240"/>
+	<role name="orbe"/>
+	<position x="1660" y="200"/>
 	<column name="code" not-null="true">
 		<type name="text"/>
 	</column>
@@ -171,8 +151,8 @@ CAUTION: Do not modify this file unless you know what you are doing.
 
 <table name="material_types">
 	<schema name="orbe_value_lists"/>
-	<role name="postgres"/>
-	<position x="1280" y="360"/>
+	<role name="orbe"/>
+	<position x="1660" y="300"/>
 	<column name="code" not-null="true">
 		<type name="text"/>
 	</column>
@@ -188,9 +168,9 @@ CAUTION: Do not modify this file unless you know what you are doing.
 </table>
 
 <table name="material">
-	<schema name="orbe"/>
-	<role name="postgres"/>
-	<position x="700" y="420"/>
+	<schema name="orbe_observations"/>
+	<role name="orbe"/>
+	<position x="1060" y="400"/>
 	<column name="id" not-null="true">
 		<type name="int8"/>
 	</column>
@@ -200,100 +180,241 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geometry">
+	<column name="geom">
 		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
-	<constraint name="material_pk" type="pk-constr" table="orbe.material">
+	<constraint name="material_pk" type="pk-constr" table="orbe_observations.material">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<constraint name="vegetation_fk_vegetation_type" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="orbe_value_lists.vegetation_types" table="orbe.vegetation">
-	<columns names="type" ref-type="src-columns"/>
-	<columns names="code" ref-type="dst-columns"/>
-</constraint>
+<table name="monuments">
+	<schema name="sites"/>
+	<role name="orbe"/>
+	<position x="0" y="100"/>
+	<column name="code" not-null="true">
+		<type name="varchar" length="2"/>
+	</column>
+	<column name="name">
+		<type name="text"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
+	</column>
+	<constraint name="monument_pk" type="pk-constr" table="sites.monuments">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+</table>
 
-<constraint name="vegetation_fk_mosaic" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="CASCADE" del-action="CASCADE" ref-table="orbe.mosaics" table="orbe.vegetation">
-	<columns names="mosaic" ref-type="src-columns"/>
-	<columns names="code" ref-type="dst-columns"/>
-</constraint>
+<table name="vegetation">
+	<schema name="orbe_observations"/>
+	<role name="orbe"/>
+	<position x="1060" y="280"/>
+	<column name="id" not-null="true">
+		<type name="int8"/>
+	</column>
+	<column name="type">
+		<type name="text"/>
+	</column>
+	<column name="mosaic">
+		<type name="varchar" length="6"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<constraint name="vegetation_pk" type="pk-constr" table="orbe_observations.vegetation">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<schema name="aventicum" rect-visible="true" fill-color="#e1e1e1">
+	<role name="orbe"/>
+</schema>
+
+<table name="walls">
+	<schema name="aventicum"/>
+	<role name="orbe"/>
+	<position x="480" y="580"/>
+	<column name="other">
+		<type name="smallint"/>
+	</column>
+	<column name="site">
+		<type name="varchar" length="2"/>
+	</column>
+</table>
+
+<table name="restorative_intervention">
+	<schema name="orbe_observations"/>
+	<role name="orbe"/>
+	<position x="1060" y="540"/>
+	<column name="id" not-null="true">
+		<type name="int8"/>
+	</column>
+	<column name="type">
+		<type name="text"/>
+	</column>
+	<column name="material">
+		<type name="text"/>
+	</column>
+	<column name="mosaic">
+		<type name="varchar" length="6"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<constraint name="restorative_intervention_pk" type="pk-constr" table="orbe_observations.restorative_intervention">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="restorative_intervention_types">
+	<schema name="orbe_value_lists"/>
+	<role name="orbe"/>
+	<position x="1660" y="400"/>
+	<column name="code" not-null="true">
+		<type name="text"/>
+	</column>
+	<column name="value_en">
+		<type name="text"/>
+	</column>
+	<column name="value_fr">
+		<type name="text"/>
+	</column>
+	<constraint name="restorative_intervention_types_pk" type="pk-constr" table="orbe_value_lists.restorative_intervention_types">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+</table>
 
 <constraint name="analysis_fk_test_goal" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="orbe_value_lists.test_goals" table="orbe.analysis">
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="orbe_value_lists.test_goals" table="orbe_observations.analysis">
 	<columns names="test_goal" ref-type="src-columns"/>
 	<columns names="code" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="analysis_fk_mosaic" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="CASCADE" del-action="CASCADE" ref-table="orbe.mosaics" table="orbe.analysis">
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="orbe.mosaics" table="orbe_observations.analysis">
 	<columns names="mosaic" ref-type="src-columns"/>
 	<columns names="code" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="sector_fk_monument" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="orbe.monuments" table="orbe.sectors">
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="sites.monuments" table="orbe.pavilions">
 	<columns names="monument" ref-type="src-columns"/>
 	<columns names="code" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="mosaic_sector_fk" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="orbe.sectors" table="orbe.mosaics">
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="orbe.pavilions" table="orbe.mosaics">
 	<columns names="sector" ref-type="src-columns"/>
 	<columns names="code" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="material_fk_material_type" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="orbe_value_lists.material_types" table="orbe.material">
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="orbe_value_lists.material_types" table="orbe_observations.material">
 	<columns names="type" ref-type="src-columns"/>
 	<columns names="code" ref-type="dst-columns"/>
 </constraint>
 
 <constraint name="material_fk_mosaic" type="fk-constr" comparison-type="MATCH FULL"
-	 upd-action="CASCADE" del-action="CASCADE" ref-table="orbe.mosaics" table="orbe.material">
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="orbe.mosaics" table="orbe_observations.material">
 	<columns names="mosaic" ref-type="src-columns"/>
 	<columns names="code" ref-type="dst-columns"/>
 </constraint>
 
+<constraint name="vegetation_fk_vegetation_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="orbe_value_lists.vegetation_types" table="orbe_observations.vegetation">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="vegetation_fk_mosaic" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="orbe.mosaics" table="orbe_observations.vegetation">
+	<columns names="mosaic" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="aventicum_fk_site" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="sites.monuments" table="aventicum.walls">
+	<columns names="site" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="restorative_intervention_fk_material_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="orbe_value_lists.material_types" table="orbe_observations.restorative_intervention">
+	<columns names="material" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="restorative_intervention_fk_mosaic" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="orbe.mosaics" table="orbe_observations.restorative_intervention">
+	<columns names="mosaic" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="restorative_intervention_fk_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="orbe_value_lists.restorative_intervention_types" table="orbe_observations.restorative_intervention">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
 <relationship name="rel_sectors_monument" type="relfk"
-	 src-table="orbe.sectors"
-	 dst-table="orbe.monuments"
+	 src-table="orbe.pavilions"
+	 dst-table="sites.monuments"
 	 src-required="false" dst-required="false"/>
 
 <relationship name="rel_mosaics2_sectors" type="relfk"
 	 src-table="orbe.mosaics"
-	 dst-table="orbe.sectors"
+	 dst-table="orbe.pavilions"
 	 src-required="false" dst-required="false"/>
 
 <relationship name="rel_analysis_test_goals" type="relfk"
-	 src-table="orbe.analysis"
+	 src-table="orbe_observations.analysis"
 	 dst-table="orbe_value_lists.test_goals"
 	 src-required="false" dst-required="false"/>
 
 <relationship name="rel_vegetation_vegetation_types" type="relfk"
-	 src-table="orbe.vegetation"
+	 src-table="orbe_observations.vegetation"
 	 dst-table="orbe_value_lists.vegetation_types"
 	 src-required="false" dst-required="false"/>
 
 <relationship name="rel_analysis_mosaics" type="relfk"
-	 src-table="orbe.analysis"
+	 src-table="orbe_observations.analysis"
 	 dst-table="orbe.mosaics"
 	 src-required="false" dst-required="false"/>
 
 <relationship name="rel_vegetation_mosaics" type="relfk"
-	 src-table="orbe.vegetation"
+	 src-table="orbe_observations.vegetation"
 	 dst-table="orbe.mosaics"
 	 src-required="false" dst-required="false"/>
 
 <relationship name="rel_vegetation_cp_mosaics" type="relfk"
-	 src-table="orbe.material"
+	 src-table="orbe_observations.material"
 	 dst-table="orbe.mosaics"
 	 src-required="false" dst-required="false"/>
 
 <relationship name="rel_material_material_types" type="relfk"
-	 src-table="orbe.material"
+	 src-table="orbe_observations.material"
 	 dst-table="orbe_value_lists.material_types"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_walls_monuments" type="relfk"
+	 src-table="aventicum.walls"
+	 dst-table="sites.monuments"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_material_cp_material_types" type="relfk"
+	 src-table="orbe_observations.restorative_intervention"
+	 dst-table="orbe_value_lists.material_types"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_material_cp_mosaics" type="relfk"
+	 src-table="orbe_observations.restorative_intervention"
+	 dst-table="orbe.mosaics"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_restorative_intervention_restorative_intervention_types" type="relfk"
+	 src-table="orbe_observations.restorative_intervention"
+	 dst-table="orbe_value_lists.restorative_intervention_types"
 	 src-required="false" dst-required="false"/>
 
 </dbmodel>
