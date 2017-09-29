@@ -68,7 +68,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="text"/>
 	</column>
 	<column name="monument">
-		<type name="varchar" length="2"/>
+		<type name="varchar" length="3"/>
 	</column>
 	<column name="geom">
 		<type name="geometry" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
@@ -223,7 +223,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	<role name="orbe"/>
 	<position x="0" y="100"/>
 	<column name="code" not-null="true">
-		<type name="varchar" length="2"/>
+		<type name="varchar" length="3"/>
 	</column>
 	<column name="name">
 		<type name="text"/>
@@ -269,7 +269,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 		<type name="smallint"/>
 	</column>
 	<column name="site">
-		<type name="varchar" length="2"/>
+		<type name="varchar" length="3"/>
 	</column>
 </table>
 
