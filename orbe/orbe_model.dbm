@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.8.2" last-position="0,0" last-zoom="0.5"
+<dbmodel pgmodeler-ver="0.9.0" last-position="46,148" last-zoom="0.75"
 	 default-schema="public" default-owner="postgres">
 <role name="orbe">
 </role>
@@ -28,25 +28,25 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="orbe"/>
 	<position x="1040" y="100"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="sample_description">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="test_goal">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="result">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="report">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POINT" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POINT" variation="0" srid="2056"/>
 	</column>
 	<constraint name="analysis_pk" type="pk-constr" table="orbe_observations.analysis">
 		<columns names="id" ref-type="src-columns"/>
@@ -65,13 +65,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="name">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="monument">
 		<type name="varchar" length="2"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="sector_pk" type="pk-constr" table="orbe.pavilions">
 		<columns names="code" ref-type="src-columns"/>
@@ -86,13 +86,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="name">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="sector">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="mosaic_pk" type="pk-constr" table="orbe.mosaics">
 		<columns names="code" ref-type="src-columns"/>
@@ -108,13 +108,13 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="orbe"/>
 	<position x="1700" y="120"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="test_goals_pk" type="pk-constr" table="orbe_value_lists.test_goals">
 		<columns names="code" ref-type="src-columns"/>
@@ -136,17 +136,27 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1700" y="320"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="vegetation_types_pk" type="pk-constr" table="orbe_value_lists.vegetation_types">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+tree•tree•arbre⸣
+shrub•shrub•arbuste⸣
+grass•grass•herbe⸣
+moss•moss•mousse⸣
+lichen•lichen•lichene⸣
+mold•mold•moisissure⸣
+alga•alga•alghe]]>
+	</initial-data>
 </table>
 
 <table name="material_types">
@@ -154,17 +164,37 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1700" y="440"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="material_types_pk" type="pk-constr" table="orbe_value_lists.material_types">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+calcareous_stone•calcareous stone•pierre calcaire⸣
+calcareous_stone.Hauterive_limestone•Hauterive limestone•calcaire Hauterivien⸣
+calcareous_stone.Metz_limestone•Metz limestone•pierre de Metz⸣
+calcareous_stone.tuff•tuff•tuf⸣
+molassic_stone•molassic stone•pierre molassique⸣
+molassic_stone.Molière_sandstone•Molière sandstone•grès de la Molière⸣
+cementitious_mortar•cementitious mortar•mortier à base de ciment⸣
+cementitious_mortar.high_cement_content_mortar•high cement content mortar•mortier haut contenue de ciment⸣
+cementitious_mortar.low_cement_content_mortar•low cement content mortar•mortier bas contenue de ciment⸣
+cementitious_mortar.roman_cement•roman cement•ciment romain⸣
+lime_based_mortar•lime based mortar•mortier à base de chaux⸣
+lime_based_mortar.lime_mortar•lime mortar•mortier chaux⸣
+lime_based_mortar.lime_mortar_with_with_hydraulic_addition•lime mortar with with hydraulic addition•mortier chaux et adjoint hydraulique⸣
+hydraulic_lime_based_mortar•hydraulic lime based mortar•mortier à base de chaux hydraulique⸣
+hydraulic_lime_based_mortar.NHL2_mortar•NHL2 mortar•mortier NHL2⸣
+hydraulic_lime_based_mortar.NHL5_mortar•NHL5 mortar•mortier NHL5⸣
+synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
+	</initial-data>
 </table>
 
 <table name="material">
@@ -172,16 +202,16 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1060" y="400"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="type">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="material_pk" type="pk-constr" table="orbe_observations.material">
 		<columns names="id" ref-type="src-columns"/>
@@ -196,10 +226,10 @@ stone_determination•stone determination•détermination de pierre]]>
 		<type name="varchar" length="2"/>
 	</column>
 	<column name="name">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="monument_pk" type="pk-constr" table="sites.monuments">
 		<columns names="code" ref-type="src-columns"/>
@@ -211,16 +241,16 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1060" y="280"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="type">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="vegetation_pk" type="pk-constr" table="orbe_observations.vegetation">
 		<columns names="id" ref-type="src-columns"/>
@@ -236,7 +266,7 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="480" y="580"/>
 	<column name="other">
-		<type name="smallint"/>
+		<type name="smallint" length="1"/>
 	</column>
 	<column name="site">
 		<type name="varchar" length="2"/>
@@ -248,19 +278,19 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1060" y="540"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="type">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="material">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="restorative_intervention_pk" type="pk-constr" table="orbe_observations.restorative_intervention">
 		<columns names="id" ref-type="src-columns"/>
@@ -272,17 +302,49 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1700" y="560"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="restorative_intervention_types_pk" type="pk-constr" table="orbe_value_lists.restorative_intervention_types">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+edge_reinforcement•edge reinforcement•protection des bords⸣
+edge_reinforcement.framing•framing•encadrement⸣
+edge_reinforcement.edging_repair•edging repair•solin⸣
+deposition/relaying•deposition/relaying•dépose/repose⸣
+deposition/relaying.deposition•deposition•dépose⸣
+deposition/relaying.relaying•relaying•repose⸣
+consolidation•consolidation•consolidation⸣
+consolidation.consolidation•consolidation•consolidation⸣
+consolidation.application_of_protective•application of protective•application de protective⸣
+consolidation.grouting•grouting•injection⸣
+surface_protection•surface protection•protection surface⸣
+surface_protection.application_of_protective•application of protective•application de protective⸣
+surface_protection.lining•lining•entoilage⸣
+joint_work•joint work•jointoyage⸣
+joint_work.joint_work•joint work•jointoyage⸣
+joint_work.dilatation_joint•dilatation joint•joint de dilatation⸣
+cleaning•cleaning•nettoyage⸣
+cleaning.stain_reduction•stain reduction•réduction des tâches⸣
+cleaning.treatment_of_florf•treatment of florf•traitement de la flore⸣
+treatment_of_missing_part•treatment of missing part•traitement de partie manquante⸣
+treatment_of_missing_part.reintegration_with_original_material•reintegration with original material•reintégration avec matériel original⸣
+treatment_of_missing_part.mortar_fill•mortar fill•bouchage⸣
+treatment_of_missing_part.chromatic_integration•chromatic integration•intégration chromatique⸣
+surface_finish•surface finish•finition surface⸣
+surface_finish.sanding•sanding•ponçage⸣
+salt_reduction•salt reduction•reduction des sels⸣
+salt_reduction.efflorescence_reduction•efflorescence reduction•réduction des efflorescences⸣
+salt_reduction.compresse•compresse•compresse⸣
+readhesion•readhesion•readhésion]]>
+	</initial-data>
 </table>
 
 <table name="preventive_intervention_types">
@@ -290,17 +352,22 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1700" y="700"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="preventive_intervention_types_pk" type="pk-constr" table="orbe_value_lists.preventive_intervention_types">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+drainage•drainage•drainage⸣
+reburial•reburial•réenfouissement]]>
+	</initial-data>
 </table>
 
 <table name="preventive_intervention">
@@ -308,16 +375,16 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1060" y="680"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="type">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="preventive_intervention_pk" type="pk-constr" table="orbe_observations.preventive_intervention">
 		<columns names="id" ref-type="src-columns"/>
@@ -329,17 +396,33 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1720" y="1260"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="visual_alteration_types_pk" type="pk-constr" table="orbe_value_lists.visual_alteration_types">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+deposit•deposit•dépôt⸣
+deposit.excrement•excrement•excrément⸣
+deposit.soiling•soiling•encrassement⸣
+deposit.encrustation•encrustation•encroûtement⸣
+deposit.efflorescence•efflorescence•efflorescence⸣
+deposit.black_crust•black crust•croûte noire⸣
+stain•stain•tâche⸣
+stain.red•red•rouge⸣
+stain.green•green•vert⸣
+stain.yellow•yellow•coloration rouge⸣
+stain.brown•brown•brun⸣
+stain.black•black•noir⸣
+discoloration•discoloration•décoloration]]>
+	</initial-data>
 </table>
 
 <table name="structural_alteration_types">
@@ -347,17 +430,28 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1720" y="1140"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="structural_alteration_types_pk" type="pk-constr" table="orbe_value_lists.structural_alteration_types">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+fissuring•fissuring•fissuration⸣
+fissuring.fissure•fissure•fissure⸣
+fissuring.fragmenting•fragmenting•fragmentation⸣
+fissuring.fracture•fracture•fracture⸣
+bulging•bulging•soulèvement⸣
+bulging.bell•bell•cloche⸣
+bulging.rise•rise•bombement⸣
+depression•depression•affaissement]]>
+	</initial-data>
 </table>
 
 <table name="causes">
@@ -365,17 +459,26 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1720" y="1380"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="causes_pk" type="pk-constr" table="orbe_value_lists.causes">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+vandalism•vandalism•vandalisme⸣
+vegetation•vegetation•végétation⸣
+salts•salts•sels⸣
+water•water•eau⸣
+frost•frost•gel⸣
+intervention•intervention•intervention]]>
+	</initial-data>
 </table>
 
 <table name="entity_types">
@@ -383,17 +486,26 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1700" y="880"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="entity_types_fk" type="pk-constr" table="orbe_value_lists.entity_types">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+tesselatum•tesselatum•tesselatum⸣
+joint•joint•joint⸣
+preparatory_layers•preparatory layers•couches de préparation⸣
+stone_work•stone work•maçonnerie⸣
+screed•screed•chape⸣
+restored_zone•restored zone•zone restauré]]>
+	</initial-data>
 </table>
 
 <table name="entities">
@@ -401,16 +513,16 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1060" y="820"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="type">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="entities_pk" type="pk-constr" table="orbe_observations.entities">
 		<columns names="id" ref-type="src-columns"/>
@@ -422,19 +534,19 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1060" y="960"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="type">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="cause">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="missing_parts_pk" type="pk-constr" table="orbe_observations.missing_parts">
 		<columns names="id" ref-type="src-columns"/>
@@ -446,17 +558,35 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1720" y="1020"/>
 	<column name="code" not-null="true">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_en">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="value_fr">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<constraint name="material_alteration_types_pk" type="pk-constr" table="orbe_value_lists.material_alteration_types">
 		<columns names="code" ref-type="src-columns"/>
 	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+detachement•detachement•détachement⸣
+detachement.bursting•bursting•éclatement⸣
+detachement.blistering•blistering•boursouflure⸣
+detachement.chipping•chipping•épaufrures⸣
+detachement.delamination•delamination•délitage⸣
+detachement.peeling•peeling•pelage⸣
+detachement.scaling•scaling•desquamation⸣
+detachement.flaking•flaking•écaillage⸣
+detachement.disadhesion•disadhesion•décollement⸣
+detachement.fragmentation•fragmentation•fragmentation⸣
+desintegration•desintegration•désintégration⸣
+desintegration.alveolation•alveolation•alvéolation⸣
+desintegration.coving•coving•creusement⸣
+desintegration.pitting•pitting•pitting⸣
+corrosion•corrosion•corrosion]]>
+	</initial-data>
 </table>
 
 <table name="material_alterations">
@@ -464,19 +594,19 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1060" y="1100"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="type">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="cause">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="material_alterations_pk" type="pk-constr" table="orbe_observations.material_alterations">
 		<columns names="id" ref-type="src-columns"/>
@@ -488,19 +618,19 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1060" y="1240"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="type">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="cause">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="structural_alterations_pk" type="pk-constr" table="orbe_observations.structural_alterations">
 		<columns names="id" ref-type="src-columns"/>
@@ -512,19 +642,19 @@ stone_determination•stone determination•détermination de pierre]]>
 	<role name="orbe"/>
 	<position x="1060" y="1400"/>
 	<column name="id" not-null="true">
-		<type name="int8"/>
+		<type name="int8" length="1"/>
 	</column>
 	<column name="type">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="cause">
-		<type name="text"/>
+		<type name="text" length="1"/>
 	</column>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
 	<column name="geom">
-		<type name="geometry" spatial-type="POLYGON" variation="0" srid="2056"/>
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="visual_alterations_pk" type="pk-constr" table="orbe_observations.visual_alterations">
 		<columns names="id" ref-type="src-columns"/>

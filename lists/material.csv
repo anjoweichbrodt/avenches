@@ -1,0 +1,18 @@
+code	value_en	value_fr
+calcareous_stone	calcareous stone	pierre calcaire
+calcareous_stone.Hauterive_limestone	Hauterive limestone	calcaire Hauterivien
+calcareous_stone.Metz_limestone	Metz limestone	pierre de Metz
+calcareous_stone.tuff	tuff	tuf
+molassic_stone	molassic stone	pierre molassique
+molassic_stone.Molière_sandstone	Molière sandstone	grès de la Molière
+cementitious_mortar	cementitious mortar	mortier à base de ciment
+cementitious_mortar.high_cement_content_mortar	high cement content mortar	mortier haut contenue de ciment
+cementitious_mortar.low_cement_content_mortar	low cement content mortar	mortier bas contenue de ciment
+cementitious_mortar.roman_cement	roman cement	ciment romain
+lime_based_mortar	lime based mortar	mortier à base de chaux
+lime_based_mortar.lime_mortar	lime mortar	mortier chaux
+lime_based_mortar.lime_mortar_with_with_hydraulic_addition	lime mortar with with hydraulic addition	mortier chaux et adjoint hydraulique
+hydraulic_lime_based_mortar	hydraulic lime based mortar	mortier à base de chaux hydraulique
+hydraulic_lime_based_mortar.NHL2_mortar	NHL2 mortar	mortier NHL2
+hydraulic_lime_based_mortar.NHL5_mortar	NHL5 mortar	mortier NHL5
+synthetic_consolidant	synthetic consolidant	consolidant synthétique
