@@ -626,7 +626,7 @@
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>causes20170929151347226</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."causes" sql=</datasource>
       <keywordList>
@@ -1003,7 +1003,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>entity_types20170929151347366</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."entity_types" sql=</datasource>
       <keywordList>
@@ -1380,7 +1380,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>material_alteration_types20170929151347505</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."material_alteration_types" sql=</datasource>
       <keywordList>
@@ -1763,7 +1763,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>material_types20170929151347644</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."material_types" sql=</datasource>
       <keywordList>
@@ -2146,7 +2146,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <extent>
         <xmin>2531006.30554080987349153</xmin>
         <ymin>1177338.37343004997819662</ymin>
@@ -2183,6 +2183,9 @@ def my_form_open(dialog, layer, feature):
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
         <edittype widgetv2type="TextEdit" name="name">
+          <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
+        <edittype widgetv2type="TextEdit" name="scale">
           <widgetv2config IsMultiline="0" fieldEditable="1" constraint="" UseHtml="0" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
@@ -2238,6 +2241,7 @@ def my_form_open(dialog, layer, feature):
       <aliases>
         <alias field="code" index="0" name=""/>
         <alias field="name" index="1" name=""/>
+        <alias field="scale" index="2" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -2260,10 +2264,11 @@ def my_form_open(dialog, layer, feature):
       <defaults>
         <default field="code" expression=""/>
         <default field="name" expression=""/>
+        <default field="scale" expression=""/>
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>mosaics20170929151350108</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' srid=2056 type=MultiPolygon table="orbe"."mosaics" (geom) sql=</datasource>
       <keywordList>
@@ -2389,7 +2394,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>name</previewExpression>
     </maplayer>
-    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="0" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+    <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" readOnly="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
       <id>pavilions20170929151346597</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' srid=2056 type=MultiPolygon table="orbe"."pavilions" (geom) sql=</datasource>
       <keywordList>
@@ -2818,7 +2823,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>preventive_intervention_types20170929151347782</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."preventive_intervention_types" sql=</datasource>
       <keywordList>
@@ -3201,7 +3206,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>restorative_intervention_types20170929151347918</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."restorative_intervention_types" sql=</datasource>
       <keywordList>
@@ -3270,7 +3275,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>structural_alteration_types20170929151348058</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."structural_alteration_types" sql=</datasource>
       <keywordList>
@@ -3653,7 +3658,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>test_goals20170929151348197</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."test_goals" sql=</datasource>
       <keywordList>
@@ -4030,7 +4035,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression></previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>vegetation_types20170929151348338</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."vegetation_types" sql=</datasource>
       <keywordList>
@@ -4099,7 +4104,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <previewExpression>value_en</previewExpression>
     </maplayer>
-    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="0" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
+    <maplayer minimumScale="0" maximumScale="1e+08" readOnly="1" geometry="No geometry" type="vector" hasScaleBasedVisibilityFlag="0">
       <id>visual_alteration_types20170929151348478</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' table="orbe_value_lists"."visual_alteration_types" sql=</datasource>
       <keywordList>
@@ -4495,10 +4500,10 @@ def my_form_open(dialog, layer, feature):
     <WMSKeywordList type="QStringList">
       <value></value>
     </WMSKeywordList>
-    <WFSUrl type="QString"></WFSUrl>
     <quick_attribution>
       <layercbxtitle type="QString">Observation</layercbxtitle>
     </quick_attribution>
+    <WFSUrl type="QString"></WFSUrl>
     <Paths>
       <Absolute type="bool">false</Absolute>
     </Paths>
