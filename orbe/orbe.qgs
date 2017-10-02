@@ -4496,6 +4496,9 @@ def my_form_open(dialog, layer, feature):
       <value></value>
     </WMSKeywordList>
     <WFSUrl type="QString"></WFSUrl>
+    <quick_attribution>
+      <layercbxtitle type="QString">Observation</layercbxtitle>
+    </quick_attribution>
     <Paths>
       <Absolute type="bool">false</Absolute>
     </Paths>
