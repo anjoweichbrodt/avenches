@@ -1,30 +1,30 @@
 code	value_en	value_fr
 edge_reinforcement	edge reinforcement	protection des bords
-edge_reinforcement.framing	framing	encadrement
-edge_reinforcement.edging_repair	edging repair	solin
+edge_reinforcement.edge_reinforcement.framing	edge reinforcement.framing	protection des bords.encadrement
+edge_reinforcement.edge_reinforcement.edging_repair	edge reinforcement.edging repair	protection des bords.solin
 deposition/relaying	deposition/relaying	dépose/repose
-deposition/relaying.deposition	deposition	dépose
-deposition/relaying.relaying	relaying	repose
+deposition_relaying.deposition	deposition/relaying.deposition	dépose/repose.dépose
+deposition_relaying.relaying	deposition/relaying.relaying	dépose/repose.repose
 consolidation	consolidation	consolidation
-consolidation.consolidation	consolidation	consolidation
-consolidation.application_of_protective	application of protective	application de protective
-consolidation.grouting	grouting	injection
+consolidation.consolidation	consolidation.consolidation	consolidation.consolidation
+consolidation.application_of_protective	consolidation.application of protective	consolidation.application de protective
+consolidation.grouting	consolidation.grouting	consolidation.injection
 surface_protection	surface protection	protection surface
-surface_protection.application_of_protective	application of protective	application de protective
-surface_protection.lining	lining	entoilage
+surface_protection.application_of_protective	surface protection.application of protective	protection surface.application de protective
+surface_protection.lining	surface protection.lining	protection surface.entoilage
 joint_work	joint work	jointoyage
-joint_work.joint_work	joint work	jointoyage
-joint_work.dilatation_joint	dilatation joint	joint de dilatation
+joint_work.joint_work	joint work.joint work	jointoyage.jointoyage
+joint_work.dilatation_joint	joint work.dilatation joint	jointoyage.joint de dilatation
 cleaning	cleaning	nettoyage
-cleaning.stain_reduction	stain reduction	réduction des tâches
-cleaning.treatment_of_florf	treatment of florf	traitement de la flore
+cleaning.stain_reduction	cleaning.stain reduction	nettoyage.réduction des tâches
+cleaning.treatment_of_flora	cleaning.treatment of flora	nettoyage.traitement de la flore
 treatment_of_missing_part	treatment of missing part	traitement de partie manquante
-treatment_of_missing_part.reintegration_with_original_material	reintegration with original material	reintégration avec matériel original
-treatment_of_missing_part.mortar_fill	mortar fill	bouchage
-treatment_of_missing_part.chromatic_integration	chromatic integration	intégration chromatique
+treatment_of_missing_part.reintegration_with_original_material	treatment of missing part.reintegration with original material	traitement de partie manquante.reintégration avec matériel original
+treatment_of_missing_part.mortar_fill	treatment of missing part.mortar fill	traitement de partie manquante.bouchage
+treatment_of_missing_part.chromatic_integration	treatment of missing part.chromatic integration	traitement de partie manquante.intégration chromatique
 surface_finish	surface finish	finition surface
-surface_finish.sanding	sanding	ponçage
+surface_finish.sanding	surface finish.sanding	finition surface.ponçage
 salt_reduction	salt reduction	reduction des sels
-salt_reduction.efflorescence_reduction	efflorescence reduction	réduction des efflorescences
-salt_reduction.compresse	compresse	compresse
+salt_reduction.efflorescence_reduction	salt reduction.efflorescence reduction	reduction des sels.réduction des efflorescences
+salt_reduction.compresse	salt reduction.compresse	reduction des sels.compresse
 readhesion	readhesion	readhésion

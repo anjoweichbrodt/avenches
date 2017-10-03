@@ -1,9 +1,9 @@
 code	value_en	value_fr
 fissuring	fissuring	fissuration
-fissuring.fissure	fissure	fissure
-fissuring.fragmenting	fragmenting	fragmentation
-fissuring.fracture	fracture	fracture
+fissuring.fissure	fissuring.fissure	fissuration.fissure
+fissuring.fragmenting	fissuring.fragmenting	fissuration.fragmentation
+fissuring.fracture	fissuring.fracture	fissuration.fracture
 bulging	bulging	soulèvement
-bulging.bell	bell	cloche
-bulging.rise	rise	bombement
+bulging.bell	bulging.bell	soulèvement.cloche
+bulging.rise	bulging.rise	soulèvement.bombement
 depression	depression	affaissement

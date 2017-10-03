@@ -1,14 +1,14 @@
 code	value_en	value_fr
 deposit	deposit	dépôt
-deposit.excrement	excrement	excrément
-deposit.soiling	soiling	encrassement
-deposit.encrustation	encrustation	encroûtement
-deposit.efflorescence	efflorescence	efflorescence
-deposit.black_crust	black crust	croûte noire
+deposit.excrement	deposit.excrement	dépôt.excrément
+deposit.soiling	deposit.soiling	dépôt.encrassement
+deposit.encrustation	deposit.encrustation	dépôt.encroûtement
+deposit.efflorescence	deposit.efflorescence	dépôt.efflorescence
+deposit.black_crust	deposit.black crust	dépôt.croûte noire
 stain	stain	tâche
-stain.red	red	rouge
-stain.green	green	vert
-stain.yellow	yellow	coloration rouge
-stain.brown	brown	brun
-stain.black	black	noir
+stain.red	stain.red	tâche.rouge
+stain.green	stain.green	tâche.vert
+stain.yellow	stain.yellow	tâche.jaune
+stain.brown	stain.brown	tâche.brun
+stain.black	stain.black	tâche.noir
 discoloration	discoloration	décoloration

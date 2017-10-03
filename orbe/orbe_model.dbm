@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.0" last-position="0,43" last-zoom="0.55"
+<dbmodel pgmodeler-ver="0.9.0" last-position="0,0" last-zoom="1.1"
 	 default-schema="public" default-owner="postgres">
 <role name="orbe">
 </role>
@@ -60,7 +60,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="pavilions">
 	<schema name="orbe"/>
 	<role name="orbe"/>
-	<position x="140" y="643"/>
+	<position x="140" y="640"/>
 	<column name="code" not-null="true">
 		<type name="varchar" length="6"/>
 	</column>
@@ -84,7 +84,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="mosaics" hide-ext-attribs="true">
 	<schema name="orbe"/>
 	<role name="orbe"/>
-	<position x="200" y="823"/>
+	<position x="200" y="820"/>
 	<column name="code" not-null="true">
 		<type name="varchar" length="6"/>
 	</column>
@@ -115,7 +115,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="test_goals" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="1303"/>
+	<position x="1580" y="1300"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -143,7 +143,7 @@ stone_determination•stone determination•détermination de pierre]]>
 <table name="vegetation_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="1183"/>
+	<position x="1580" y="1180"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -171,7 +171,7 @@ alga•alga•alghe]]>
 <table name="material_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="803"/>
+	<position x="1580" y="800"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -187,21 +187,21 @@ alga•alga•alghe]]>
 	<initial-data>
 <![CDATA[code•value_en•value_fr⸣
 calcareous_stone•calcareous stone•pierre calcaire⸣
-calcareous_stone.Hauterive_limestone•Hauterive limestone•calcaire Hauterivien⸣
-calcareous_stone.Metz_limestone•Metz limestone•pierre de Metz⸣
-calcareous_stone.tuff•tuff•tuf⸣
+calcareous_stone.hauterive_limestone•calcareous stone.Hauterive limestone•pierre calcaire.calcaire Hauterivien⸣
+calcareous_stone.metz_limestone•calcareous stone.Metz limestone•pierre calcaire.pierre de Metz⸣
+calcareous_stone.tuff•calcareous stone.tuff•pierre calcaire.tuf⸣
 molassic_stone•molassic stone•pierre molassique⸣
-molassic_stone.Molière_sandstone•Molière sandstone•grès de la Molière⸣
+molassic_stone.moliere_sandstone•molassic stone.Molière sandstone•pierre molassique.grès de la Molière⸣
 cementitious_mortar•cementitious mortar•mortier à base de ciment⸣
-cementitious_mortar.high_cement_content_mortar•high cement content mortar•mortier haut contenue de ciment⸣
-cementitious_mortar.low_cement_content_mortar•low cement content mortar•mortier bas contenue de ciment⸣
-cementitious_mortar.roman_cement•roman cement•ciment romain⸣
+cementitious_mortar.cementitious_mortar.high_cement_content_mortar•cementitious mortar.high cement content mortar•mortier à base de ciment.mortier haut contenue de ciment⸣
+cementitious_mortar.cementitious_mortar.low_cement_content_mortar•cementitious mortar.low cement content mortar•mortier à base de ciment.mortier bas contenue de ciment⸣
+cementitious_mortar.cementitious_mortar.roman_cement•cementitious mortar.roman cement•mortier à base de ciment.ciment romain⸣
 lime_based_mortar•lime based mortar•mortier à base de chaux⸣
-lime_based_mortar.lime_mortar•lime mortar•mortier chaux⸣
-lime_based_mortar.lime_mortar_with_with_hydraulic_addition•lime mortar with with hydraulic addition•mortier chaux et adjoint hydraulique⸣
+lime_based_mortar.lime_based_mortar.lime_mortar•lime based mortar.lime mortar•mortier à base de chaux.mortier chaux⸣
+lime_based_mortar.lime_based_mortar.lime_mortar_with_with_hydraulic_addition•lime based mortar.lime mortar with with hydraulic addition•mortier à base de chaux.mortier chaux et adjoint hydraulique⸣
 hydraulic_lime_based_mortar•hydraulic lime based mortar•mortier à base de chaux hydraulique⸣
-hydraulic_lime_based_mortar.NHL2_mortar•NHL2 mortar•mortier NHL2⸣
-hydraulic_lime_based_mortar.NHL5_mortar•NHL5 mortar•mortier NHL5⸣
+hydraulic_lime_based_mortar.nhl2_mortar•hydraulic lime based mortar.NHL2 mortar•mortier à base de chaux hydraulique.mortier NHL2⸣
+hydraulic_lime_based_mortar.nhl5_mortar•hydraulic lime based mortar.NHL5 mortar•mortier à base de chaux hydraulique.mortier NHL5⸣
 synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</initial-data>
 </table>
@@ -230,7 +230,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 <table name="monuments">
 	<schema name="sites"/>
 	<role name="orbe"/>
-	<position x="80" y="463"/>
+	<position x="80" y="460"/>
 	<column name="code" not-null="true">
 		<type name="varchar" length="3"/>
 	</column>
@@ -276,7 +276,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 <table name="walls">
 	<schema name="aventicum"/>
 	<role name="orbe"/>
-	<position x="140" y="1003"/>
+	<position x="140" y="1000"/>
 	<column name="other">
 		<type name="smallint" length="1"/>
 	</column>
@@ -312,7 +312,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 <table name="restorative_intervention_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="923"/>
+	<position x="1580" y="920"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -328,33 +328,33 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	<initial-data>
 <![CDATA[code•value_en•value_fr⸣
 edge_reinforcement•edge reinforcement•protection des bords⸣
-edge_reinforcement.framing•framing•encadrement⸣
-edge_reinforcement.edging_repair•edging repair•solin⸣
+edge_reinforcement.edge_reinforcement.framing•edge reinforcement.framing•protection des bords.encadrement⸣
+edge_reinforcement.edge_reinforcement.edging_repair•edge reinforcement.edging repair•protection des bords.solin⸣
 deposition/relaying•deposition/relaying•dépose/repose⸣
-deposition/relaying.deposition•deposition•dépose⸣
-deposition/relaying.relaying•relaying•repose⸣
+deposition_relaying.deposition•deposition/relaying.deposition•dépose/repose.dépose⸣
+deposition_relaying.relaying•deposition/relaying.relaying•dépose/repose.repose⸣
 consolidation•consolidation•consolidation⸣
-consolidation.consolidation•consolidation•consolidation⸣
-consolidation.application_of_protective•application of protective•application de protective⸣
-consolidation.grouting•grouting•injection⸣
+consolidation.consolidation•consolidation.consolidation•consolidation.consolidation⸣
+consolidation.application_of_protective•consolidation.application of protective•consolidation.application de protective⸣
+consolidation.grouting•consolidation.grouting•consolidation.injection⸣
 surface_protection•surface protection•protection surface⸣
-surface_protection.application_of_protective•application of protective•application de protective⸣
-surface_protection.lining•lining•entoilage⸣
+surface_protection.application_of_protective•surface protection.application of protective•protection surface.application de protective⸣
+surface_protection.lining•surface protection.lining•protection surface.entoilage⸣
 joint_work•joint work•jointoyage⸣
-joint_work.joint_work•joint work•jointoyage⸣
-joint_work.dilatation_joint•dilatation joint•joint de dilatation⸣
+joint_work.joint_work•joint work.joint work•jointoyage.jointoyage⸣
+joint_work.dilatation_joint•joint work.dilatation joint•jointoyage.joint de dilatation⸣
 cleaning•cleaning•nettoyage⸣
-cleaning.stain_reduction•stain reduction•réduction des tâches⸣
-cleaning.treatment_of_florf•treatment of florf•traitement de la flore⸣
+cleaning.stain_reduction•cleaning.stain reduction•nettoyage.réduction des tâches⸣
+cleaning.treatment_of_flora•cleaning.treatment of flora•nettoyage.traitement de la flore⸣
 treatment_of_missing_part•treatment of missing part•traitement de partie manquante⸣
-treatment_of_missing_part.reintegration_with_original_material•reintegration with original material•reintégration avec matériel original⸣
-treatment_of_missing_part.mortar_fill•mortar fill•bouchage⸣
-treatment_of_missing_part.chromatic_integration•chromatic integration•intégration chromatique⸣
+treatment_of_missing_part.reintegration_with_original_material•treatment of missing part.reintegration with original material•traitement de partie manquante.reintégration avec matériel original⸣
+treatment_of_missing_part.mortar_fill•treatment of missing part.mortar fill•traitement de partie manquante.bouchage⸣
+treatment_of_missing_part.chromatic_integration•treatment of missing part.chromatic integration•traitement de partie manquante.intégration chromatique⸣
 surface_finish•surface finish•finition surface⸣
-surface_finish.sanding•sanding•ponçage⸣
+surface_finish.sanding•surface finish.sanding•finition surface.ponçage⸣
 salt_reduction•salt reduction•reduction des sels⸣
-salt_reduction.efflorescence_reduction•efflorescence reduction•réduction des efflorescences⸣
-salt_reduction.compresse•compresse•compresse⸣
+salt_reduction.efflorescence_reduction•salt reduction.efflorescence reduction•reduction des sels.réduction des efflorescences⸣
+salt_reduction.compresse•salt reduction.compresse•reduction des sels.compresse⸣
 readhesion•readhesion•readhésion]]>
 	</initial-data>
 </table>
@@ -362,7 +362,7 @@ readhesion•readhesion•readhésion]]>
 <table name="preventive_intervention_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="1063"/>
+	<position x="1580" y="1060"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -406,7 +406,7 @@ reburial•reburial•réenfouissement]]>
 <table name="visual_alteration_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="663"/>
+	<position x="1580" y="660"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -422,17 +422,17 @@ reburial•reburial•réenfouissement]]>
 	<initial-data>
 <![CDATA[code•value_en•value_fr⸣
 deposit•deposit•dépôt⸣
-deposit.excrement•excrement•excrément⸣
-deposit.soiling•soiling•encrassement⸣
-deposit.encrustation•encrustation•encroûtement⸣
-deposit.efflorescence•efflorescence•efflorescence⸣
-deposit.black_crust•black crust•croûte noire⸣
+deposit.excrement•deposit.excrement•dépôt.excrément⸣
+deposit.soiling•deposit.soiling•dépôt.encrassement⸣
+deposit.encrustation•deposit.encrustation•dépôt.encroûtement⸣
+deposit.efflorescence•deposit.efflorescence•dépôt.efflorescence⸣
+deposit.black_crust•deposit.black crust•dépôt.croûte noire⸣
 stain•stain•tâche⸣
-stain.red•red•rouge⸣
-stain.green•green•vert⸣
-stain.yellow•yellow•coloration rouge⸣
-stain.brown•brown•brun⸣
-stain.black•black•noir⸣
+stain.red•stain.red•tâche.rouge⸣
+stain.green•stain.green•tâche.vert⸣
+stain.yellow•stain.yellow•tâche.jaune⸣
+stain.brown•stain.brown•tâche.brun⸣
+stain.black•stain.black•tâche.noir⸣
 discoloration•discoloration•décoloration]]>
 	</initial-data>
 </table>
@@ -440,7 +440,7 @@ discoloration•discoloration•décoloration]]>
 <table name="structural_alteration_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="383"/>
+	<position x="1580" y="380"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -456,12 +456,12 @@ discoloration•discoloration•décoloration]]>
 	<initial-data>
 <![CDATA[code•value_en•value_fr⸣
 fissuring•fissuring•fissuration⸣
-fissuring.fissure•fissure•fissure⸣
-fissuring.fragmenting•fragmenting•fragmentation⸣
-fissuring.fracture•fracture•fracture⸣
+fissuring.fissure•fissuring.fissure•fissuration.fissure⸣
+fissuring.fragmenting•fissuring.fragmenting•fissuration.fragmentation⸣
+fissuring.fracture•fissuring.fracture•fissuration.fracture⸣
 bulging•bulging•soulèvement⸣
-bulging.bell•bell•cloche⸣
-bulging.rise•rise•bombement⸣
+bulging.bell•bulging.bell•soulèvement.cloche⸣
+bulging.rise•bulging.rise•soulèvement.bombement⸣
 depression•depression•affaissement]]>
 	</initial-data>
 </table>
@@ -469,7 +469,7 @@ depression•depression•affaissement]]>
 <table name="causes" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="243"/>
+	<position x="1580" y="240"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -496,7 +496,7 @@ intervention•intervention•intervention]]>
 <table name="entity_types">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="123"/>
+	<position x="1580" y="120"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -523,7 +523,7 @@ restored_zone•restored zone•zone restauré]]>
 <table name="entities" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="123"/>
+	<position x="880" y="120"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -544,7 +544,7 @@ restored_zone•restored zone•zone restauré]]>
 <table name="missing_parts" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="243"/>
+	<position x="880" y="240"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -568,7 +568,7 @@ restored_zone•restored zone•zone restauré]]>
 <table name="material_alteration_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="523"/>
+	<position x="1580" y="520"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -584,19 +584,19 @@ restored_zone•restored zone•zone restauré]]>
 	<initial-data>
 <![CDATA[code•value_en•value_fr⸣
 detachement•detachement•détachement⸣
-detachement.bursting•bursting•éclatement⸣
-detachement.blistering•blistering•boursouflure⸣
-detachement.chipping•chipping•épaufrures⸣
-detachement.delamination•delamination•délitage⸣
-detachement.peeling•peeling•pelage⸣
-detachement.scaling•scaling•desquamation⸣
-detachement.flaking•flaking•écaillage⸣
-detachement.disadhesion•disadhesion•décollement⸣
-detachement.fragmentation•fragmentation•fragmentation⸣
+detachement.bursting•detachement.bursting•détachement.éclatement⸣
+detachement.blistering•detachement.blistering•détachement.boursouflure⸣
+detachement.chipping•detachement.chipping•détachement.épaufrures⸣
+detachement.delamination•detachement.delamination•détachement.délitage⸣
+detachement.peeling•detachement.peeling•détachement.pelage⸣
+detachement.scaling•detachement.scaling•détachement.desquamation⸣
+detachement.flaking•detachement.flaking•détachement.écaillage⸣
+detachement.disadhesion•detachement.disadhesion•détachement.décollement⸣
+detachement.fragmentation•detachement.fragmentation•détachement.fragmentation⸣
 desintegration•desintegration•désintégration⸣
-desintegration.alveolation•alveolation•alvéolation⸣
-desintegration.coving•coving•creusement⸣
-desintegration.pitting•pitting•pitting⸣
+desintegration.desintegration.alveolation•desintegration.alveolation•désintégration.alvéolation⸣
+desintegration.desintegration.coving•desintegration.coving•désintégration.creusement⸣
+desintegration.desintegration.pitting•desintegration.pitting•désintégration.pitting⸣
 corrosion•corrosion•corrosion]]>
 	</initial-data>
 </table>
