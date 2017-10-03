@@ -74,7 +74,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<column name="scale">
-		<type name="smallint" length="0" dimension="5"/>
+		<type name="int8"/>
 	</column>
 	<constraint name="sector_pk" type="pk-constr" table="orbe.pavilions">
 		<columns names="code" ref-type="src-columns"/>
@@ -98,7 +98,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<column name="scale">
-		<type name="smallint" length="0" dimension="5"/>
+		<type name="int8"/>
 	</column>
 	<column name="rotation">
 		<type name="smallint" length="0" dimension="3"/>
@@ -241,7 +241,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<column name="scale">
-		<type name="smallint" length="0" dimension="5"/>
+		<type name="int8"/>
 	</column>
 	<constraint name="monument_pk" type="pk-constr" table="sites.monuments">
 		<columns names="code" ref-type="src-columns"/>
