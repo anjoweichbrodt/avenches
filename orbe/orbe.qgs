@@ -44,29 +44,19 @@
     <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="monuments20170929151347079" name="monuments">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-group expanded="1" checked="Qt::PartiallyChecked" name="Contexte">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Contexte">
       <customproperties/>
       <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Cadastre">
         <customproperties/>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="cadastre_polyline20150504145532804" name="cadastre_polyline">
-          <customproperties>
-            <property key="expandedLegendNodes"/>
-          </customproperties>
-        </layer-tree-layer>
-        <layer-tree-layer expanded="0" checked="Qt::Unchecked" id="cadastre_polygone20150504145454078" name="cadastre_polygone">
-          <customproperties>
-            <property key="expandedLegendNodes"/>
-          </customproperties>
-        </layer-tree-layer>
       </layer-tree-group>
-      <layer-tree-group expanded="0" checked="Qt::PartiallyChecked" name="Plans">
+      <layer-tree-group expanded="0" checked="Qt::Unchecked" name="Plans">
         <customproperties/>
-        <layer-tree-group expanded="1" checked="Qt::Checked" name="Bernal 2013">
+        <layer-tree-group expanded="1" checked="Qt::Unchecked" name="Bernal 2013">
           <customproperties/>
-          <layer-tree-layer expanded="1" checked="Qt::Checked" id="plan_polygone20171003155508633" name="plan_polygone">
+          <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="plan_polygone20171003155508633" name="plan_polygone">
             <customproperties/>
           </layer-tree-layer>
-          <layer-tree-layer expanded="1" checked="Qt::Checked" id="plan_polyline20171003155512354" name="plan_polyline">
+          <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="plan_polyline20171003155512354" name="plan_polyline">
             <customproperties/>
           </layer-tree-layer>
         </layer-tree-group>
@@ -77,6 +67,27 @@
           </layer-tree-layer>
         </layer-tree-group>
       </layer-tree-group>
+    </layer-tree-group>
+    <layer-tree-group expanded="0" checked="Qt::Checked" name="Mosaic Raster">
+      <customproperties/>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PI_M1_2_3__constat__L2011__OP00120171003160224297" name="ORBE__PI-M1-2-3__constat__L2011__OP001">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PII_M4__constat__L2014__OP00120171003160300333" name="ORBE__PII-M5__constat__L2014__OP001">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PIII_M6__constat__L2014__OP00120171003160334581" name="ORBE__PIII-M6__constat__L2014__OP001">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PIII_M7__suivi__L2016__OP20171003160524039" name="ORBE__PIII-M7__suivi__L2016__OP">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PIV_M8__constat__L2014__OP00120171003160415283" name="ORBE__PIV-M8__constat__L2014__OP001">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PV_M9__constat__L2011__OP00120171003160636638" name="ORBE__PV-M9__constat__L2011__OP001">
+        <customproperties/>
+      </layer-tree-layer>
     </layer-tree-group>
     <layer-tree-group expanded="0" checked="Qt::Unchecked" name="WMS">
       <customproperties/>
@@ -93,57 +104,36 @@
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="value lists">
+    <layer-tree-group expanded="0" checked="Qt::Unchecked" name="value lists">
       <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="causes20170929151347226" name="causes">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="causes20170929151347226" name="causes">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="entity_types20170929151347366" name="entity_types">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="entity_types20170929151347366" name="entity_types">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="material_alteration_types20170929151347505" name="material_alteration_types">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="material_alteration_types20170929151347505" name="material_alteration_types">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="material_types20170929151347644" name="material_types">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="material_types20170929151347644" name="material_types">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="preventive_intervention_types20170929151347782" name="preventive_intervention_types">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="preventive_intervention_types20170929151347782" name="preventive_intervention_types">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="restorative_intervention_types20170929151347918" name="restorative_intervention_types">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="restorative_intervention_types20170929151347918" name="restorative_intervention_types">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="structural_alteration_types20170929151348058" name="structural_alteration_types">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="structural_alteration_types20170929151348058" name="structural_alteration_types">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="test_goals20170929151348197" name="test_goals">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="test_goals20170929151348197" name="test_goals">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="vegetation_types20170929151348338" name="vegetation_types">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="vegetation_types20170929151348338" name="vegetation_types">
         <customproperties/>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="visual_alteration_types20170929151348478" name="visual_alteration_types">
-        <customproperties/>
-      </layer-tree-layer>
-    </layer-tree-group>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="Mosaic Raster">
-      <customproperties/>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PII_M4__constat__L2014__OP00120171003160300333" name="ORBE__PII-M4__constat__L2014__OP001">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PI_M1_2_3__constat__L2011__OP00120171003160224297" name="ORBE__PI-M1-2-3__constat__L2011__OP001">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PIV_M8__constat__L2014__OP00120171003160415283" name="ORBE__PIV-M8__constat__L2014__OP001">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PIII_M6__constat__L2014__OP00120171003160334581" name="ORBE__PIII-M6__constat__L2014__OP001">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PV_M9__constat__L2011__OP00120171003160636638" name="ORBE__PV-M9__constat__L2011__OP001">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer expanded="1" checked="Qt::Checked" id="ORBE__PIII_M7__suivi__L2016__OP20171003160524039" name="ORBE__PIII-M7__suivi__L2016__OP">
+      <layer-tree-layer expanded="1" checked="Qt::Unchecked" id="visual_alteration_types20170929151348478" name="visual_alteration_types">
         <customproperties/>
       </layer-tree-layer>
     </layer-tree-group>
@@ -234,10 +224,10 @@
   <mapcanvas>
     <units>meters</units>
     <extent>
-      <xmin>2531063.09048855910077691</xmin>
-      <ymin>1177441.68650639173574746</ymin>
-      <xmax>2531078.56628109095618129</xmax>
-      <ymax>1177455.82276142598129809</ymax>
+      <xmin>531103.72594962175935507</xmin>
+      <ymin>177385.16935453188489191</ymin>
+      <xmax>531109.86879466148093343</xmax>
+      <ymax>177393.66586380123044364</ymax>
     </extent>
     <rotation>0</rotation>
     <projections>1</projections>
@@ -256,17 +246,17 @@
     <rendermaptile>0</rendermaptile>
     <layer_coordinate_transform_info>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="material20170929151348912"/>
-      <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="ORBE__PIII_M6__constat__L2014__OP00120171003160334581"/>
+      <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="ORBE__PIII_M6__constat__L2014__OP00120171003160334581"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="mosaics20170929151350108"/>
+      <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="ORBE__PIII_M7__suivi__L2016__OP20171003160524039"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="missing_parts20170929151349207"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="entities20170929151348766"/>
-      <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="ORBE__PIII_M7__suivi__L2016__OP20171003160524039"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="preventive_intervention20170929151349357"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="SWISSIMAGE___SWISSIMAGE20171003142619382"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="ORBE__PV_M9__constat__L2011__OP00120171003160636638"/>
+      <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="plan_polyline20171003155512354"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:3857" srcDatumTransform="-1" destDatumTransform="-1" layerid="OSM_CH190320170929153809116"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="restorative_intervention20170929151349509"/>
-      <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="plan_polyline20171003155512354"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="plan_Orbe20171003155612349"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:2056" srcDatumTransform="-1" destDatumTransform="-1" layerid="visual_alterations20170929151349957"/>
       <layer_coordinate_transform destAuthId="EPSG:2056" srcAuthId="EPSG:21781" srcDatumTransform="-1" destDatumTransform="-1" layerid="plan_polygone20171003155508633"/>
@@ -316,8 +306,6 @@
       <item>CM_WMS20171003142609157</item>
       <item>swissALTI3D_Reliefschattierung20171003142617678</item>
       <item>SWISSIMAGE___SWISSIMAGE20171003142619382</item>
-      <item>cadastre_polyline20150504145532804</item>
-      <item>cadastre_polygone20150504145454078</item>
       <item>plan_polygone20171003155508633</item>
       <item>plan_polyline20171003155512354</item>
       <item>plan_Orbe20171003155612349</item>
@@ -395,29 +383,18 @@
         <legendlayerfile isInOverview="0" layerid="monuments20170929151347079" visible="0"/>
       </filegroup>
     </legendlayer>
-    <legendgroup open="true" checked="Qt::PartiallyChecked" name="Contexte">
-      <legendgroup open="false" checked="Qt::Unchecked" name="Cadastre">
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="cadastre_polyline" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="cadastre_polyline20150504145532804" visible="0"/>
-          </filegroup>
-        </legendlayer>
-        <legendlayer drawingOrder="-1" open="false" checked="Qt::Unchecked" name="cadastre_polygone" showFeatureCount="0">
-          <filegroup open="false" hidden="false">
-            <legendlayerfile isInOverview="0" layerid="cadastre_polygone20150504145454078" visible="0"/>
-          </filegroup>
-        </legendlayer>
-      </legendgroup>
-      <legendgroup open="false" checked="Qt::PartiallyChecked" name="Plans">
-        <legendgroup open="true" checked="Qt::Checked" name="Bernal 2013">
-          <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="plan_polygone" showFeatureCount="0">
+    <legendgroup open="false" checked="Qt::Unchecked" name="Contexte">
+      <legendgroup open="false" checked="Qt::Unchecked" name="Cadastre"/>
+      <legendgroup open="false" checked="Qt::Unchecked" name="Plans">
+        <legendgroup open="true" checked="Qt::Unchecked" name="Bernal 2013">
+          <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="plan_polygone" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-              <legendlayerfile isInOverview="0" layerid="plan_polygone20171003155508633" visible="1"/>
+              <legendlayerfile isInOverview="0" layerid="plan_polygone20171003155508633" visible="0"/>
             </filegroup>
           </legendlayer>
-          <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="plan_polyline" showFeatureCount="0">
+          <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="plan_polyline" showFeatureCount="0">
             <filegroup open="true" hidden="false">
-              <legendlayerfile isInOverview="0" layerid="plan_polyline20171003155512354" visible="1"/>
+              <legendlayerfile isInOverview="0" layerid="plan_polyline20171003155512354" visible="0"/>
             </filegroup>
           </legendlayer>
         </legendgroup>
@@ -429,6 +406,38 @@
           </legendlayer>
         </legendgroup>
       </legendgroup>
+    </legendgroup>
+    <legendgroup open="false" checked="Qt::Checked" name="Mosaic Raster">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PI-M1-2-3__constat__L2011__OP001" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="ORBE__PI_M1_2_3__constat__L2011__OP00120171003160224297" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PII-M5__constat__L2014__OP001" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="ORBE__PII_M4__constat__L2014__OP00120171003160300333" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PIII-M6__constat__L2014__OP001" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="ORBE__PIII_M6__constat__L2014__OP00120171003160334581" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PIII-M7__suivi__L2016__OP" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="ORBE__PIII_M7__suivi__L2016__OP20171003160524039" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PIV-M8__constat__L2014__OP001" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="ORBE__PIV_M8__constat__L2014__OP00120171003160415283" visible="1"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PV-M9__constat__L2011__OP001" showFeatureCount="0">
+        <filegroup open="true" hidden="false">
+          <legendlayerfile isInOverview="0" layerid="ORBE__PV_M9__constat__L2011__OP00120171003160636638" visible="1"/>
+        </filegroup>
+      </legendlayer>
     </legendgroup>
     <legendgroup open="false" checked="Qt::Unchecked" name="WMS">
       <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="CM-WMS" showFeatureCount="0">
@@ -452,171 +461,59 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup open="false" checked="Qt::Checked" name="value lists">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="causes" showFeatureCount="0">
+    <legendgroup open="false" checked="Qt::Unchecked" name="value lists">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="causes" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="causes20170929151347226" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="causes20170929151347226" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="entity_types" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="entity_types" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="entity_types20170929151347366" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="entity_types20170929151347366" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="material_alteration_types" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="material_alteration_types" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="material_alteration_types20170929151347505" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="material_alteration_types20170929151347505" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="material_types" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="material_types" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="material_types20170929151347644" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="material_types20170929151347644" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="preventive_intervention_types" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="preventive_intervention_types" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="preventive_intervention_types20170929151347782" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="preventive_intervention_types20170929151347782" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="restorative_intervention_types" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="restorative_intervention_types" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="restorative_intervention_types20170929151347918" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="restorative_intervention_types20170929151347918" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="structural_alteration_types" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="structural_alteration_types" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="structural_alteration_types20170929151348058" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="structural_alteration_types20170929151348058" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="test_goals" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="test_goals" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="test_goals20170929151348197" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="test_goals20170929151348197" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="vegetation_types" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="vegetation_types" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="vegetation_types20170929151348338" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="vegetation_types20170929151348338" visible="0"/>
         </filegroup>
       </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="visual_alteration_types" showFeatureCount="0">
+      <legendlayer drawingOrder="-1" open="true" checked="Qt::Unchecked" name="visual_alteration_types" showFeatureCount="0">
         <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="visual_alteration_types20170929151348478" visible="1"/>
-        </filegroup>
-      </legendlayer>
-    </legendgroup>
-    <legendgroup open="false" checked="Qt::Checked" name="Mosaic Raster">
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PII-M4__constat__L2014__OP001" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="ORBE__PII_M4__constat__L2014__OP00120171003160300333" visible="1"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PI-M1-2-3__constat__L2011__OP001" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="ORBE__PI_M1_2_3__constat__L2011__OP00120171003160224297" visible="1"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PIV-M8__constat__L2014__OP001" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="ORBE__PIV_M8__constat__L2014__OP00120171003160415283" visible="1"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PIII-M6__constat__L2014__OP001" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="ORBE__PIII_M6__constat__L2014__OP00120171003160334581" visible="1"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PV-M9__constat__L2011__OP001" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="ORBE__PV_M9__constat__L2011__OP00120171003160636638" visible="1"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="ORBE__PIII-M7__suivi__L2016__OP" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
-          <legendlayerfile isInOverview="0" layerid="ORBE__PIII_M7__suivi__L2016__OP20171003160524039" visible="1"/>
+          <legendlayerfile isInOverview="0" layerid="visual_alteration_types20170929151348478" visible="0"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
   </legend>
-  <Composer title="Composer 1" visible="0">
-    <Composition resizeToContentsMarginLeft="0" snapping="0" showPages="1" guidesVisible="1" resizeToContentsMarginTop="0" worldFileMap="{07e0f7ba-396f-4279-a80b-328d480bfc79}" alignmentSnap="1" printResolution="300" paperWidth="297" gridVisible="0" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="0" snapTolerancePixels="5" printAsRaster="0" generateWorldFile="0" paperHeight="210" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="0">
-      <symbol alpha="1" clip_to_extent="1" type="fill" name="">
-        <layer pass="0" class="SimpleFill" locked="0">
-          <prop k="border_width_map_unit_scale" v="0,0,0,0,0,0"/>
-          <prop k="color" v="255,255,255,255"/>
-          <prop k="joinstyle" v="miter"/>
-          <prop k="offset" v="0,0"/>
-          <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-          <prop k="offset_unit" v="MM"/>
-          <prop k="outline_color" v="0,0,0,255"/>
-          <prop k="outline_style" v="no"/>
-          <prop k="outline_width" v="0.26"/>
-          <prop k="outline_width_unit" v="MM"/>
-          <prop k="style" v="solid"/>
-        </layer>
-      </symbol>
-      <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="false" followPresetName="" id="0" previewMode="Cache" drawCanvasItems="true">
-        <Extent ymin="999998.08157857856713235" xmin="1999996.53896726295351982" ymax="1000005.08157859672792256" xmax="2000003.53896728111431003"/>
-        <LayerSet/>
-        <Grid/>
-        <ComposerMapGrid rightAnnotationDirection="0" gridFramePenColor="0,0,0,255" show="0" bottomAnnotationPosition="1" annotationPrecision="3" showAnnotation="0" topFrameDivisions="0" uuid="{eef8f042-85d3-4096-b125-947dc14c4fbe}" leftAnnotationDirection="0" topAnnotationPosition="1" rightAnnotationDisplay="0" offsetX="0" offsetY="0" rightFrameDivisions="0" gridStyle="0" annotationFontColor="0,0,0,255" intervalX="0" gridFrameSideFlags="15" intervalY="0" bottomAnnotationDirection="0" leftAnnotationDisplay="0" leftFrameDivisions="0" frameFillColor1="255,255,255,255" annotationExpression="" frameFillColor2="0,0,0,255" crossLength="3" gridFramePenThickness="0.5" bottomAnnotationDisplay="0" unit="0" topAnnotationDisplay="0" leftAnnotationPosition="1" blendMode="0" gridFrameStyle="0" rightAnnotationPosition="1" gridFrameWidth="2" name="Grid 1" annotationFormat="0" bottomFrameDivisions="0" topAnnotationDirection="0" frameAnnotationDistance="1">
-          <lineStyle>
-            <symbol alpha="1" clip_to_extent="1" type="line" name="">
-              <layer pass="0" class="SimpleLine" locked="0">
-                <prop k="capstyle" v="square"/>
-                <prop k="customdash" v="5;2"/>
-                <prop k="customdash_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="customdash_unit" v="MM"/>
-                <prop k="draw_inside_polygon" v="0"/>
-                <prop k="joinstyle" v="bevel"/>
-                <prop k="line_color" v="0,0,0,255"/>
-                <prop k="line_style" v="solid"/>
-                <prop k="line_width" v="0"/>
-                <prop k="line_width_unit" v="MM"/>
-                <prop k="offset" v="0"/>
-                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="offset_unit" v="MM"/>
-                <prop k="use_custom_dash" v="0"/>
-                <prop k="width_map_unit_scale" v="0,0,0,0,0,0"/>
-              </layer>
-            </symbol>
-          </lineStyle>
-          <markerStyle>
-            <symbol alpha="1" clip_to_extent="1" type="marker" name="">
-              <layer pass="0" class="SimpleMarker" locked="0">
-                <prop k="angle" v="0"/>
-                <prop k="color" v="0,0,0,255"/>
-                <prop k="horizontal_anchor_point" v="1"/>
-                <prop k="joinstyle" v="bevel"/>
-                <prop k="name" v="circle"/>
-                <prop k="offset" v="0,0"/>
-                <prop k="offset_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="offset_unit" v="MM"/>
-                <prop k="outline_color" v="0,0,0,255"/>
-                <prop k="outline_style" v="solid"/>
-                <prop k="outline_width" v="0"/>
-                <prop k="outline_width_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="outline_width_unit" v="MM"/>
-                <prop k="scale_method" v="diameter"/>
-                <prop k="size" v="2"/>
-                <prop k="size_map_unit_scale" v="0,0,0,0,0,0"/>
-                <prop k="size_unit" v="MM"/>
-                <prop k="vertical_anchor_point" v="1"/>
-              </layer>
-            </symbol>
-          </markerStyle>
-          <annotationFontProperties description="Cantarell,11,-1,5,50,0,0,0,0,0" style=""/>
-        </ComposerMapGrid>
-        <AtlasMap scalingMode="2" atlasDriven="0" margin="0.10000000000000001"/>
-        <ComposerItem pagey="31" page="1" id="" lastValidViewScaleFactor="2.11975" positionMode="0" positionLock="false" x="92" y="31" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="151" outlineWidth="0.3" excludeFromExports="0" uuid="{07e0f7ba-396f-4279-a80b-328d480bfc79}" height="151" itemRotation="0" frame="false" pagex="92">
-          <FrameColor alpha="255" red="0" blue="0" green="0"/>
-          <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
-          <customproperties/>
-        </ComposerItem>
-      </ComposerMap>
-      <customproperties/>
-    </Composition>
-    <Atlas hideCoverage="false" coverageLayer="" singleFile="false" filenamePattern="'output_'||@atlas_featurenumber" enabled="true" filterFeatures="false" sortFeatures="false" pageNameExpression=""/>
-  </Composer>
   <Composer title="Composer_A2" visible="0">
     <Composition resizeToContentsMarginLeft="20" snapping="1" showPages="1" guidesVisible="1" resizeToContentsMarginTop="10" worldFileMap="{b4dffd01-45a3-4bf9-80db-f292a1cce0ae}" alignmentSnap="1" printResolution="300" paperWidth="594" gridVisible="1" snapGridOffsetX="0" smartGuides="1" snapGridOffsetY="0" resizeToContentsMarginRight="10" snapTolerancePixels="5" printAsRaster="1" generateWorldFile="0" paperHeight="420" numPages="1" snapGridResolution="10" resizeToContentsMarginBottom="10">
       <symbol alpha="1" clip_to_extent="1" type="fill" name="">
@@ -635,7 +532,7 @@
         </layer>
       </symbol>
       <SnapLine y1="0" x1="0" y2="420" x2="0"/>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="8.62486" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./SIG_context/Logos/north-arrow-orienteering-md.png" northOffset="0" pictureHeight="8.67777" mapId="1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="6.24919" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="Q:/4 Site et monuments/48 SIG/ComposerTemplates/north-arrow-orienteering-md.png" northOffset="0" pictureHeight="9.05679" mapId="1" anchorPoint="0">
         <ComposerItem pagey="12.9432" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="519.851" y="12.9432" visibility="1" zValue="15" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="8.62486" outlineWidth="0.3" excludeFromExports="0" uuid="{2a3cfbb5-528f-4679-a6ce-1e610b3be2ba}" height="9.05679" itemRotation="0" frame="false" pagex="519.851">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -643,7 +540,7 @@
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="66" pictureWidth="10.3552" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./SIG_context/Logos/north-arrow-orienteering-md.png" northOffset="0" pictureHeight="10.4187" mapId="0" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="67" pictureWidth="8.00802" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="Q:/4 Site et monuments/48 SIG/ComposerTemplates/north-arrow-orienteering-md.png" northOffset="0" pictureHeight="11.6058" mapId="0" anchorPoint="0">
         <ComposerItem pagey="388.031" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="86" y="388.031" visibility="1" zValue="14" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="13.8122" outlineWidth="0.3" excludeFromExports="0" uuid="{ebe8b8d8-dc06-4061-ae65-9887a805aa43}" height="13.6976" itemRotation="0" frame="false" pagex="86">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
@@ -651,7 +548,7 @@
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="15.7933" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="./SIG_context/Logos/LogoAVENTICUM.jpg" northOffset="0" pictureHeight="15.8902" mapId="-1" anchorPoint="0">
+      <ComposerPicture resizeMode="0" svgBorderWidth="0.2" pictureRotation="0" pictureWidth="62.1801" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northMode="0" file="Q:/4 Site et monuments/48 SIG/ComposerTemplates/LogoAVENTICUM.jpg" northOffset="0" pictureHeight="13.4022" mapId="-1" anchorPoint="0">
         <ComposerItem pagey="391.641" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="519.183" y="391.641" visibility="1" zValue="13" background="false" transparency="0" frameJoinStyle="miter" blendMode="6" width="62.1801" outlineWidth="0.1" excludeFromExports="0" uuid="{0a74f83c-d036-409c-9be7-8728bd736a85}" height="15.8902" itemRotation="0" frame="false" pagex="519.183">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="0" red="255" blue="255" green="255"/>
@@ -659,31 +556,31 @@
           <customproperties/>
         </ComposerItem>
       </ComposerPicture>
-      <ComposerScaleBar lineCapStyle="square" style="Line Ticks Up" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="1" alignment="0" numSegments="6" segmentMillimeters="30.0028" lineJoinStyle="miter" minBarWidth="100" numUnitsPerSegment="0.6" units="1" labelBarSpace="2" outlineWidth="0.1" numSegmentsLeft="0" maxBarWidth="200" height="2" boxContentSpace="0.5" mapId="0" unitLabel=" m">
+      <ComposerScaleBar lineCapStyle="square" style="Line Ticks Up" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="1" alignment="0" numSegments="6" segmentMillimeters="26.6691" lineJoinStyle="miter" minBarWidth="100" numUnitsPerSegment="0.4" units="1" labelBarSpace="2" outlineWidth="0.1" numSegmentsLeft="0" maxBarWidth="200" height="2" boxContentSpace="0.5" mapId="0" unitLabel=" m">
         <scaleBarFont description="MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0" style=""/>
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="390" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="206" y="390" visibility="1" zValue="12" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="191.417" outlineWidth="0.3" excludeFromExports="0" uuid="{6058445f-c655-48e8-b9de-49cc9d478a17}" height="12.5552" itemRotation="0" frame="false" pagex="206">
+        <ComposerItem pagey="390" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="206" y="390" visibility="1" zValue="12" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="171.415" outlineWidth="0.3" excludeFromExports="0" uuid="{6058445f-c655-48e8-b9de-49cc9d478a17}" height="12.5552" itemRotation="0" frame="false" pagex="206">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerScaleBar lineCapStyle="square" style="Line Ticks Up" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="1" alignment="0" numSegments="3" segmentMillimeters="10.1131" lineJoinStyle="miter" minBarWidth="30" numUnitsPerSegment="5" units="1" labelBarSpace="2" outlineWidth="0.1" numSegmentsLeft="0" maxBarWidth="33" height="1" boxContentSpace="1" mapId="1" unitLabel=" m">
+      <ComposerScaleBar lineCapStyle="square" style="Line Ticks Up" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="1" alignment="0" numSegments="3" segmentMillimeters="10.1131" lineJoinStyle="miter" minBarWidth="30" numUnitsPerSegment="50" units="1" labelBarSpace="2" outlineWidth="0.1" numSegmentsLeft="0" maxBarWidth="33" height="1" boxContentSpace="1" mapId="1" unitLabel=" m">
         <scaleBarFont description="MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0" style=""/>
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
         <strokeColor alpha="255" red="0" blue="0" green="0"/>
         <textColor alpha="255" red="0" blue="0" green="0"/>
-        <ComposerItem pagey="69" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="543.712" y="69" visibility="1" zValue="11" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="38.9893" outlineWidth="0.3" excludeFromExports="0" uuid="{34db2502-b7a2-4b3b-a401-76cb5295db66}" height="20" itemRotation="0" frame="false" pagex="543.712">
+        <ComposerItem pagey="69" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="543.712" y="69" visibility="1" zValue="11" background="false" transparency="0" frameJoinStyle="miter" blendMode="0" width="39.7393" outlineWidth="0.3" excludeFromExports="0" uuid="{34db2502-b7a2-4b3b-a401-76cb5295db66}" height="20" itemRotation="0" frame="false" pagex="543.712">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <customproperties/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="2" segmentMillimeters="202.262" lineJoinStyle="miter" minBarWidth="50" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="1" unitLabel=" m">
+      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="2" segmentMillimeters="20.2262" lineJoinStyle="miter" minBarWidth="50" numUnitsPerSegment="100" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="0" maxBarWidth="150" height="3" boxContentSpace="1" mapId="1" unitLabel=" m">
         <scaleBarFont description="MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0" style=""/>
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
@@ -695,7 +592,7 @@
           <customproperties/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="4" segmentMillimeters="1250.12" lineJoinStyle="miter" minBarWidth="50" numUnitsPerSegment="25" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
+      <ComposerScaleBar lineCapStyle="square" style="Numeric" numMapUnitsPerScaleBarUnit="1" segmentSizeMode="0" alignment="0" numSegments="4" segmentMillimeters="1666.82" lineJoinStyle="miter" minBarWidth="50" numUnitsPerSegment="25" units="1" labelBarSpace="3" outlineWidth="1" numSegmentsLeft="2" maxBarWidth="150" height="3" boxContentSpace="1" mapId="0" unitLabel="m">
         <scaleBarFont description="MS Shell Dlg 2,12,-1,5,50,0,0,0,0,0" style=""/>
         <fillColor alpha="255" red="0" blue="0" green="0"/>
         <fillColor2 alpha="255" red="255" blue="255" green="255"/>
@@ -707,7 +604,7 @@
           <customproperties/>
         </ComposerItem>
       </ComposerScaleBar>
-      <ComposerLabel valign="32" marginX="2" marginY="2" labelText="[%  @monuments__name %]" htmlState="0" halign="4">
+      <ComposerLabel valign="32" marginX="2" marginY="2" labelText="[%  attribute(get_feature('monuments', 'code',attribute(get_feature('pavilions', 'code', &quot;sector&quot;), 'monument')), 'name') %]" htmlState="0" halign="4">
         <LabelFont description="MS Shell Dlg 2,14,-1,5,75,0,0,0,0,0" style=""/>
         <FontColor red="0" blue="0" green="0"/>
         <ComposerItem pagey="330.963" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="516.394" y="330.963" visibility="1" zValue="8" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="67.7573" outlineWidth="0.2" excludeFromExports="0" uuid="{54a48ace-6ffb-4c1e-8950-13e9d4591f49}" height="17.2561" itemRotation="0" frame="true" pagex="516.394">
@@ -725,7 +622,7 @@
           <customproperties/>
         </ComposerItem>
       </ComposerLabel>
-      <ComposerLabel valign="32" marginX="2" marginY="1.5" labelText="Preparation : [% @nameauthor %]&#xa;Validation : [% @nameverificator %]&#xa;Date suivi : [% @surveydate %]&#xa;Date impression : [% @printdate %]&#xa;Date orthophoto : [% @basemapdate %]&#xa;Nom feuille : [% @surveydate %]_[% monument %]_[% sector %]_[% code %]_[%replace( @surveyname,' ','-')%]_1-[% scale %]_DAO.pdf&#xa;Nom fichier : [% @project_filename %]&#xa;" htmlState="0" halign="1">
+      <ComposerLabel valign="32" marginX="2" marginY="1.5" labelText="Preparation : [% @nameauthor %]&#xa;Validation : [% @nameverificator %]&#xa;Date suivi : [% @surveydate %]&#xa;Date impression : [% @printdate %]&#xa;Date orthophoto : [% @basemapdate %]&#xa;Nom feuille : &#xa;[% @surveydate %]_[% attribute(get_feature('monuments', 'code',attribute(get_feature('pavilions', 'code', &quot;sector&quot;), 'monument')), 'code') %]_[% sector %]_[% code %]_[%replace( @surveyname,' ','-')%]_1-[% scale %]_DAO.pdf&#xa;Nom fichier : [% @project_filename %]&#xa;" htmlState="0" halign="1">
         <LabelFont description="MS Shell Dlg 2,8,-1,5,50,0,0,0,0,0" style=""/>
         <FontColor red="0" blue="0" green="0"/>
         <ComposerItem pagey="356.949" page="1" id="" lastValidViewScaleFactor="-1" positionMode="0" positionLock="true" x="516.395" y="356.949" visibility="1" zValue="6" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="67.7573" outlineWidth="0.2" excludeFromExports="0" uuid="{085bc034-7c1d-4f8f-8683-2074b1fdd250}" height="31.3025" itemRotation="0" frame="true" pagex="516.395">
@@ -784,7 +681,7 @@
         </ComposerItem>
       </ComposerLegend>
       <ComposerMap followPreset="false" mapRotation="0" keepLayerSet="true" followPresetName="Context" id="1" previewMode="Cache" drawCanvasItems="false">
-        <Extent ymin="192676.48092099840869196" xmin="570223.76875297422520816" ymax="192966.36322266759816557" xmax="570558.76875331602059305"/>
+        <Extent ymin="192676.48092099849600345" xmin="570223.76875297422520816" ymax="192966.36322266748175025" xmax="570558.76875331602059305"/>
         <LayerSet>
           <Layer>mosaics20170929151350108</Layer>
           <Layer>pavilions20170929151346597</Layer>
@@ -2634,11 +2531,11 @@ def my_form_open(dialog, layer, feature):
           <annotationFontProperties description="MS Shell Dlg 2,8.25,-1,5,50,0,0,0,0,0" style=""/>
         </ComposerMapGrid>
         <AtlasMap scalingMode="1" atlasDriven="1" margin="0.10000000000000001"/>
-        <ComposerItem pagey="10.1" page="1" id="Carte localisation:" lastValidViewScaleFactor="1.04468" positionMode="2" positionLock="true" x="516.394" y="10.1" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="67.7578" outlineWidth="0.2" excludeFromExports="0" uuid="{b4dffd01-45a3-4bf9-80db-f292a1cce0ae}" height="58.6322" itemRotation="0" frame="true" pagex="516.394">
+        <ComposerItem pagey="10.1" page="1" id="Carte localisation:" lastValidViewScaleFactor="1.75388" positionMode="2" positionLock="true" x="516.394" y="10.1" visibility="1" zValue="3" background="true" transparency="0" frameJoinStyle="miter" blendMode="0" width="67.7578" outlineWidth="0.2" excludeFromExports="0" uuid="{b4dffd01-45a3-4bf9-80db-f292a1cce0ae}" height="58.6322" itemRotation="0" frame="true" pagex="516.394">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="128" red="255" blue="255" green="255"/>
           <dataDefinedMapRotation expr="&quot;rotation&quot;" field="rotation" active="false" useExpr="false"/>
-          <dataDefinedMapScale expr="&quot;monuments_scale&quot;" field="scale_cont" active="true" useExpr="true"/>
+          <dataDefinedMapScale expr="attribute(get_feature('monuments', 'code',attribute(get_feature('pavilions', 'code', &quot;sector&quot;), 'monument')), 'scale')" field="scale_cont" active="true" useExpr="true"/>
           <customproperties/>
         </ComposerItem>
       </ComposerMap>
@@ -4060,7 +3957,7 @@ def my_form_open(dialog, layer, feature):
           </symbol>
         </ComposerMapOverview>
         <AtlasMap scalingMode="1" atlasDriven="1" margin="0.10000000000000001"/>
-        <ComposerItem pagey="10.1" page="1" id="Carte pricipale:" lastValidViewScaleFactor="1.04468" positionMode="0" positionLock="true" x="20.1" y="10.1" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="564.052" outlineWidth="0.2" excludeFromExports="0" uuid="{b9d8ba32-9423-44ec-a8a2-a59e957e7f64}" height="399.801" itemRotation="0" frame="true" pagex="20.1">
+        <ComposerItem pagey="10.1" page="1" id="Carte pricipale:" lastValidViewScaleFactor="1.75388" positionMode="0" positionLock="true" x="20.1" y="10.1" visibility="1" zValue="1" background="true" transparency="0" frameJoinStyle="round" blendMode="0" width="564.052" outlineWidth="0.2" excludeFromExports="0" uuid="{b9d8ba32-9423-44ec-a8a2-a59e957e7f64}" height="399.801" itemRotation="0" frame="true" pagex="20.1">
           <FrameColor alpha="255" red="0" blue="0" green="0"/>
           <BackgroundColor alpha="255" red="255" blue="255" green="255"/>
           <dataDefinedMapRotation expr="&quot;rotation&quot;" field="rotation" active="true" useExpr="true"/>
@@ -4134,11 +4031,11 @@ def my_form_open(dialog, layer, feature):
       <layername>ORBE__PIII-M6__constat__L2014__OP001</layername>
       <srs>
         <spatialrefsys>
-          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
-          <srsid>47</srsid>
-          <srid>2056</srid>
-          <authid>EPSG:2056</authid>
-          <description>CH1903+ / LV95</description>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>1919</srsid>
+          <srid>21781</srid>
+          <authid>EPSG:21781</authid>
+          <description>CH1903 / LV03</description>
           <projectionacronym>somerc</projectionacronym>
           <ellipsoidacronym>bessel</ellipsoidacronym>
           <geographicflag>false</geographicflag>
@@ -4191,11 +4088,11 @@ def my_form_open(dialog, layer, feature):
       <layername>ORBE__PIII-M7__suivi__L2016__OP</layername>
       <srs>
         <spatialrefsys>
-          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
-          <srsid>47</srsid>
-          <srid>2056</srid>
-          <authid>EPSG:2056</authid>
-          <description>CH1903+ / LV95</description>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=600000 +y_0=200000 +ellps=bessel +towgs84=674.4,15.1,405.3,0,0,0,0 +units=m +no_defs</proj4>
+          <srsid>1919</srsid>
+          <srid>21781</srid>
+          <authid>EPSG:21781</authid>
+          <description>CH1903 / LV03</description>
           <projectionacronym>somerc</projectionacronym>
           <ellipsoidacronym>bessel</ellipsoidacronym>
           <geographicflag>false</geographicflag>
@@ -4229,7 +4126,7 @@ def my_form_open(dialog, layer, feature):
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
         <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="2"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear" zoomedInResampler="cubic"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
@@ -4241,11 +4138,11 @@ def my_form_open(dialog, layer, feature):
         <ymax>177420.57761092626606114</ymax>
       </extent>
       <id>ORBE__PII_M4__constat__L2014__OP00120171003160300333</id>
-      <datasource>Q:\5 Laboratoire_C-R\54_Externe\D54-Orbe_VD\00_SIG_Orbe\03 Pav-II_Mos-4\M4\Documentation photographique\2014\ORBE__PII-M4__constat__L2014__OP001.tif</datasource>
+      <datasource>Q:\5 Laboratoire_C-R\54_Externe\D54-Orbe_VD\00_SIG_Orbe\03 Pav-II_Mos-5\M5\Documentation photographique\2014\ORBE__PII-M5__constat__L2014__OP001.tif</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>ORBE__PII-M4__constat__L2014__OP001</layername>
+      <layername>ORBE__PII-M5__constat__L2014__OP001</layername>
       <srs>
         <spatialrefsys>
           <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
@@ -4281,7 +4178,7 @@ def my_form_open(dialog, layer, feature):
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="0" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+        <rasterrenderer opacity="1" alphaBand="-1" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
           <rasterTransparency/>
           <redContrastEnhancement>
             <minValue>0</minValue>
@@ -4301,7 +4198,7 @@ def my_form_open(dialog, layer, feature):
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
         <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="2"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear" zoomedInResampler="bilinear"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
@@ -4358,7 +4255,7 @@ def my_form_open(dialog, layer, feature):
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
         <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="2"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear" zoomedInResampler="bilinear"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
@@ -4407,7 +4304,7 @@ def my_form_open(dialog, layer, feature):
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="0" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+        <rasterrenderer opacity="1" alphaBand="-1" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
           <rasterTransparency/>
           <redContrastEnhancement>
             <minValue>0</minValue>
@@ -4427,7 +4324,7 @@ def my_form_open(dialog, layer, feature):
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
         <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="2"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear" zoomedInResampler="bilinear"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
@@ -4476,7 +4373,7 @@ def my_form_open(dialog, layer, feature):
         <map-layer-style name=""/>
       </map-layer-style-manager>
       <pipe>
-        <rasterrenderer opacity="1" alphaBand="0" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
+        <rasterrenderer opacity="1" alphaBand="-1" blueBand="3" greenBand="2" type="multibandcolor" redBand="1">
           <rasterTransparency/>
           <redContrastEnhancement>
             <minValue>0</minValue>
@@ -4496,7 +4393,7 @@ def my_form_open(dialog, layer, feature):
         </rasterrenderer>
         <brightnesscontrast brightness="0" contrast="0"/>
         <huesaturation colorizeGreen="128" colorizeOn="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" saturation="0" colorizeStrength="100"/>
-        <rasterresampler maxOversampling="2"/>
+        <rasterresampler maxOversampling="2" zoomedOutResampler="bilinear" zoomedInResampler="bilinear"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
@@ -6767,6 +6664,12 @@ def my_form_open(dialog, layer, feature):
       </conditionalstyles>
     </maplayer>
     <maplayer simplifyAlgorithm="0" minimumScale="0" maximumScale="1e+08" simplifyDrawingHints="1" readOnly="1" minLabelScale="0" maxLabelScale="1e+08" simplifyDrawingTol="1" geometry="Polygon" simplifyMaxScale="1" type="vector" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" scaleBasedLabelVisibilityFlag="0">
+      <extent>
+        <xmin>2531065.05418907990679145</xmin>
+        <ymin>1177344.72121734009124339</ymin>
+        <xmax>2531129.8748338301666081</xmax>
+        <ymax>1177498.52565666008740664</ymax>
+      </extent>
       <id>mosaics20170929151350108</id>
       <datasource>dbname='avenches' host=46.101.216.29 port=5432 key='code' srid=2056 type=MultiPolygon table="orbe"."mosaics" (geom) sql=</datasource>
       <keywordList>
@@ -10572,22 +10475,16 @@ def my_form_open(dialog, layer, feature):
     <visibility-preset name="composer_mainmap">
       <layer style="" id="plan_polygone20171003155508633"/>
       <layer style="" id="plan_polyline20171003155512354"/>
-      <layer style="" id="causes20170929151347226"/>
-      <layer style="" id="entity_types20170929151347366"/>
-      <layer style="" id="material_alteration_types20170929151347505"/>
-      <layer style="" id="material_types20170929151347644"/>
-      <layer style="" id="preventive_intervention_types20170929151347782"/>
-      <layer style="" id="restorative_intervention_types20170929151347918"/>
-      <layer style="" id="structural_alteration_types20170929151348058"/>
-      <layer style="" id="test_goals20170929151348197"/>
-      <layer style="" id="vegetation_types20170929151348338"/>
-      <layer style="" id="visual_alteration_types20170929151348478"/>
-      <layer style="" id="ORBE__PII_M4__constat__L2014__OP00120171003160300333"/>
+      <layer style="" id="CM_WMS20171003142609157"/>
+      <layer style="" id="swissALTI3D_Reliefschattierung20171003142617678"/>
+      <layer style="" id="OSM_LV95__SwissStyle_20170929154816265"/>
+      <layer style="" id="SWISSIMAGE___SWISSIMAGE20171003142619382"/>
       <layer style="" id="ORBE__PI_M1_2_3__constat__L2011__OP00120171003160224297"/>
-      <layer style="" id="ORBE__PIV_M8__constat__L2014__OP00120171003160415283"/>
+      <layer style="" id="ORBE__PII_M4__constat__L2014__OP00120171003160300333"/>
       <layer style="" id="ORBE__PIII_M6__constat__L2014__OP00120171003160334581"/>
-      <layer style="" id="ORBE__PV_M9__constat__L2011__OP00120171003160636638"/>
       <layer style="" id="ORBE__PIII_M7__suivi__L2016__OP20171003160524039"/>
+      <layer style="" id="ORBE__PIV_M8__constat__L2014__OP00120171003160415283"/>
+      <layer style="" id="ORBE__PV_M9__constat__L2011__OP00120171003160636638"/>
     </visibility-preset>
   </visibility-presets>
 </qgis>
