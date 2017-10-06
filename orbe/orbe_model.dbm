@@ -23,7 +23,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="orbe"/>
 </schema>
 
-<table name="analysis" hide-ext-attribs="true">
+<table name="analysis">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="1300"/>
@@ -81,7 +81,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<table name="mosaics" hide-ext-attribs="true">
+<table name="mosaics">
 	<schema name="orbe"/>
 	<role name="orbe"/>
 	<position x="200" y="820"/>
@@ -112,7 +112,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="orbe"/>
 </schema>
 
-<table name="test_goals" hide-ext-attribs="true">
+<table name="test_goals">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
 	<position x="1580" y="1300"/>
@@ -140,7 +140,7 @@ stone_determination•stone determination•détermination de pierre]]>
 	</initial-data>
 </table>
 
-<table name="vegetation_types" hide-ext-attribs="true">
+<table name="vegetation_types">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
 	<position x="1580" y="1180"/>
@@ -168,7 +168,7 @@ alga•alga•alghe]]>
 	</initial-data>
 </table>
 
-<table name="material_types" hide-ext-attribs="true">
+<table name="material_types">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
 	<position x="1580" y="800"/>
@@ -206,7 +206,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</initial-data>
 </table>
 
-<table name="material" hide-ext-attribs="true">
+<table name="material">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="800"/>
@@ -248,7 +248,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</constraint>
 </table>
 
-<table name="vegetation" hide-ext-attribs="true">
+<table name="vegetation">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="1180"/>
@@ -285,7 +285,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</column>
 </table>
 
-<table name="restorative_intervention" hide-ext-attribs="true">
+<table name="restorative_intervention">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="920"/>
@@ -309,7 +309,7 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</constraint>
 </table>
 
-<table name="restorative_intervention_types" hide-ext-attribs="true">
+<table name="restorative_intervention_types">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
 	<position x="1580" y="920"/>
@@ -359,7 +359,7 @@ readhesion•readhesion•readhésion]]>
 	</initial-data>
 </table>
 
-<table name="preventive_intervention_types" hide-ext-attribs="true">
+<table name="preventive_intervention_types">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
 	<position x="1580" y="1060"/>
@@ -382,7 +382,7 @@ reburial•reburial•réenfouissement]]>
 	</initial-data>
 </table>
 
-<table name="preventive_intervention" hide-ext-attribs="true">
+<table name="preventive_intervention">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="1060"/>
@@ -403,7 +403,7 @@ reburial•reburial•réenfouissement]]>
 	</constraint>
 </table>
 
-<table name="visual_alteration_types" hide-ext-attribs="true">
+<table name="visual_alteration_types">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
 	<position x="1580" y="660"/>
@@ -437,7 +437,7 @@ discoloration•discoloration•décoloration]]>
 	</initial-data>
 </table>
 
-<table name="structural_alteration_types" hide-ext-attribs="true">
+<table name="structural_alteration_types">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
 	<position x="1580" y="380"/>
@@ -466,7 +466,7 @@ depression•depression•affaissement]]>
 	</initial-data>
 </table>
 
-<table name="causes" hide-ext-attribs="true">
+<table name="causes">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
 	<position x="1580" y="240"/>
@@ -520,7 +520,7 @@ restored_zone•restored zone•zone restauré]]>
 	</initial-data>
 </table>
 
-<table name="entities" hide-ext-attribs="true">
+<table name="entities">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="120"/>
@@ -541,7 +541,7 @@ restored_zone•restored zone•zone restauré]]>
 	</constraint>
 </table>
 
-<table name="missing_parts" hide-ext-attribs="true">
+<table name="missing_parts">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="240"/>
@@ -565,7 +565,7 @@ restored_zone•restored zone•zone restauré]]>
 	</constraint>
 </table>
 
-<table name="material_alteration_types" hide-ext-attribs="true">
+<table name="material_alteration_types">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
 	<position x="1580" y="520"/>
@@ -601,7 +601,7 @@ corrosion•corrosion•corrosion]]>
 	</initial-data>
 </table>
 
-<table name="material_alterations" hide-ext-attribs="true">
+<table name="material_alterations">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="520"/>
@@ -625,7 +625,7 @@ corrosion•corrosion•corrosion]]>
 	</constraint>
 </table>
 
-<table name="structural_alterations" hide-ext-attribs="true">
+<table name="structural_alterations">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="380"/>
@@ -649,7 +649,7 @@ corrosion•corrosion•corrosion]]>
 	</constraint>
 </table>
 
-<table name="visual_alterations" hide-ext-attribs="true">
+<table name="visual_alterations">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
 	<position x="880" y="660"/>
