@@ -101,7 +101,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 		<type name="int8"/>
 	</column>
 	<column name="rotation">
-		<type name="smallint" length="0" dimension="3"/>
+		<type name="smallint" length="0"/>
 	</column>
 	<constraint name="mosaic_pk" type="pk-constr" table="orbe.mosaics">
 		<columns names="code" ref-type="src-columns"/>
