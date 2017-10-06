@@ -4543,6 +4543,9 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="analysis20170929151348618_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
         </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
         <symbols>
@@ -4933,6 +4936,9 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="entities20170929151348766_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
         </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
         <symbols>
@@ -5309,6 +5315,9 @@ def my_form_open(dialog, layer, feature):
         </edittype>
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="material20170929151348912_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
+        </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
@@ -5690,6 +5699,9 @@ def my_form_open(dialog, layer, feature):
         </edittype>
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="material_alterations20170929151349058_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
+        </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
@@ -6073,6 +6085,9 @@ def my_form_open(dialog, layer, feature):
         </edittype>
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="missing_parts20170929151349207_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
+        </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
@@ -8301,6 +8316,9 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="preventive_intervention20170929151349357_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
         </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
         <symbols>
@@ -8681,6 +8699,9 @@ def my_form_open(dialog, layer, feature):
         </edittype>
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="restorative_intervention20170929151349509_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
+        </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
@@ -9134,6 +9155,9 @@ def my_form_open(dialog, layer, feature):
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="structural_alterations20170929151349661_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
         </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
+        </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
         <symbols>
@@ -9558,6 +9582,9 @@ def my_form_open(dialog, layer, feature):
         </edittype>
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="vegetation20170929151349809_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
+        </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
@@ -10008,6 +10035,9 @@ def my_form_open(dialog, layer, feature):
         </edittype>
         <edittype widgetv2type="RelationReference" name="mosaic">
           <widgetv2config OrderByValue="0" fieldEditable="1" AllowAddFeatures="0" ShowForm="0" Relation="visual_alterations20170929151349957_mosaic_mosaics20170929151350108_code" ReadOnly="1" constraint="" MapIdentification="1" labelOnTop="0" constraintDescription="" notNull="0" AllowNULL="0"/>
+        </edittype>
+        <edittype widgetv2type="DateTime" name="observation_date">
+          <widgetv2config fieldEditable="1" calendar_popup="0" allow_null="1" display_format="dd.MM.yyyy" field_format="yyyy-MM-dd" constraint="" labelOnTop="0" constraintDescription="" notNull="0"/>
         </edittype>
       </edittypes>
       <renderer-v2 forceraster="0" symbollevels="0" type="singleSymbol" enableorderby="0">
