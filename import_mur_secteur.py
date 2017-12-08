@@ -18,7 +18,7 @@ import csv
 conn = psycopg2.connect("service=pg_avenches")
 cur = conn.cursor()
 
-with open('mur_secteur.csv', 'rb') as csvfile:
+with open('mur_secteur.csv', 'r') as csvfile:
     mur_secteurs = csv.reader(csvfile, delimiter=',', quotechar='|')
 
     # Skip header line

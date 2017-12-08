@@ -9,7 +9,8 @@ exposition::site.expo,
 fk_mur,
 fk_secteur,
 NULL::text AS nomatlas
-FROM site.surface;
+FROM site.surface
+LEFT JOIN site.mur_part ON mur_part.mur_part_id = fk_mur_part;
 
 CREATE OR REPLACE FUNCTION site.surface_create_insert()
   RETURNS trigger AS
@@ -32,8 +33,7 @@ BEGIN
            geom_3d -- create geometry
            , geom_frontal
            , exposition
-           , fk_mur
-           , fk_secteur
+           , fk_mur_part
            )
      VALUES (
            ST_SetSRID(ST_MakePolygon(
@@ -47,8 +47,7 @@ BEGIN
            ), 2056)
            , ST_SetSRID(import_surface.wkb_geometry, 1)
            , NEW.exposition
-           , NEW.fk_mur
-           , NEW.fk_secteur
+           , (SELECT mur_part_id FROM site.mur_part WHERE fk_mur = NEW.fk_mur AND fk_secteur = NEW.fk_secteur)
            )
            RETURNING surface_id INTO NEW.surface_id;
      RETURN NEW;

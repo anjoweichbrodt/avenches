@@ -8,14 +8,18 @@ DROP TABLE IF EXISTS site.monument CASCADE;
 DROP TABLE IF EXISTS site.mur_secteur CASCADE;
 DROP TABLE IF EXISTS site.secteur CASCADE;
 DROP TABLE IF EXISTS site.mur CASCADE;
+DROP TABLE IF EXISTS site.mur_part CASCADE;
 DROP TABLE IF EXISTS site.surface CASCADE;
 DROP TABLE IF EXISTS site.materiel_zone CASCADE;
 DROP TABLE IF EXISTS site.observation CASCADE;
+DROP TABLE IF EXISTS site.zone CASCADE;
 DROP TABLE IF EXISTS listes.pierres CASCADE;
 DROP TABLE IF EXISTS listes.mortiers CASCADE;
 DROP TABLE IF EXISTS listes.mortiers CASCADE;
 DROP TABLE IF EXISTS listes.observations CASCADE;
-DROP TYPE IF EXISTS site.expo;
+
+DROP TYPE IF EXISTS site.expo CASCADE;
+DROP TYPE IF EXISTS site.zone_type CASCADE;
 
 CREATE TABLE site.monument (
   monument_id    INTEGER PRIMARY KEY,
@@ -52,9 +56,9 @@ SELECT
   fk_secteur,
   visible
 FROM site.mur_part
-LEFT JOIN site.mur ON mur.mur_id = mur_part.fk_mur_id
-LEFT JOIN site.secteur ON secteur.secteur_id = mur_part.fk_secteur_id
-);
+LEFT JOIN site.mur ON mur.mur_id = mur_part.fk_mur
+LEFT JOIN site.secteur ON secteur.secteur_id = mur_part.fk_secteur
+;
 
 CREATE TYPE site.expo AS ENUM (
   'S',
