@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.0" last-position="0,668" last-zoom="1.1"
+<dbmodel pgmodeler-ver="0.9.0" last-position="0,0" last-zoom="0.4"
 	 default-schema="public" default-owner="postgres">
 <role name="orbe">
 </role>
@@ -23,10 +23,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="orbe"/>
 </schema>
 
-<table name="analysis">
+<table name="analysis" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="1300"/>
+	<position x="960" y="1420"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -45,11 +45,11 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POINT" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POINT" variation="0" srid="2056"/>
 	</column>
 	<constraint name="analysis_pk" type="pk-constr" table="orbe_observations.analysis">
 		<columns names="id" ref-type="src-columns"/>
@@ -60,7 +60,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="orbe"/>
 </schema>
 
-<table name="pavilions">
+<table name="pavilions" hide-ext-attribs="true">
 	<schema name="orbe"/>
 	<role name="orbe"/>
 	<position x="140" y="640"/>
@@ -73,11 +73,11 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<column name="monument">
 		<type name="varchar" length="3"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="scale">
 		<type name="int8" length="1"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="sector_pk" type="pk-constr" table="orbe.pavilions">
 		<columns names="code" ref-type="src-columns"/>
@@ -92,7 +92,7 @@ Pav4•Pavillon 4•OB•010600002008080000010000000103000000010000000500000023D
 	</initial-data>
 </table>
 
-<table name="mosaics">
+<table name="mosaics" hide-ext-attribs="true">
 	<schema name="orbe"/>
 	<role name="orbe"/>
 	<position x="200" y="820"/>
@@ -105,14 +105,14 @@ Pav4•Pavillon 4•OB•010600002008080000010000000103000000010000000500000023D
 	<column name="sector">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="scale">
 		<type name="int8" length="1"/>
 	</column>
 	<column name="rotation">
 		<type name="smallint" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="mosaic_pk" type="pk-constr" table="orbe.mosaics">
 		<columns names="code" ref-type="src-columns"/>
@@ -134,10 +134,10 @@ Mos1•Mosaïque 1•Pav1•0106000020080800000100000001030000000100000005000000
 	<role name="orbe"/>
 </schema>
 
-<table name="test_goals">
+<table name="test_goals" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="1300"/>
+	<position x="1760" y="1440"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -162,10 +162,10 @@ stone_determination•stone determination•détermination de pierre]]>
 	</initial-data>
 </table>
 
-<table name="vegetation_types">
+<table name="vegetation_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="1180"/>
+	<position x="1760" y="1300"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -190,10 +190,10 @@ alga•alga•alghe]]>
 	</initial-data>
 </table>
 
-<table name="material_types">
+<table name="material_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="800"/>
+	<position x="1760" y="880"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -228,10 +228,10 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</initial-data>
 </table>
 
-<table name="material">
+<table name="material" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="800"/>
+	<position x="960" y="840"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -241,18 +241,18 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="material_pk" type="pk-constr" table="orbe_observations.material">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="monuments">
+<table name="monuments" hide-ext-attribs="true">
 	<schema name="sites"/>
 	<role name="orbe"/>
 	<position x="80" y="460"/>
@@ -262,11 +262,11 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	<column name="name">
 		<type name="text" length="1"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="scale">
 		<type name="int8" length="1"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="monument_pk" type="pk-constr" table="sites.monuments">
 		<columns names="code" ref-type="src-columns"/>
@@ -279,10 +279,10 @@ OB•Mosaïques romaines d'Orbe-Boscéaz•0106000020080800000100000001030000000
 	</initial-data>
 </table>
 
-<table name="vegetation">
+<table name="vegetation" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="1180"/>
+	<position x="960" y="1280"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -292,11 +292,11 @@ OB•Mosaïques romaines d'Orbe-Boscéaz•0106000020080800000100000001030000000
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="vegetation_pk" type="pk-constr" table="orbe_observations.vegetation">
 		<columns names="id" ref-type="src-columns"/>
@@ -307,10 +307,10 @@ OB•Mosaïques romaines d'Orbe-Boscéaz•0106000020080800000100000001030000000
 	<role name="orbe"/>
 </schema>
 
-<table name="walls">
+<table name="walls" hide-ext-attribs="true">
 	<schema name="aventicum"/>
 	<role name="orbe"/>
-	<position x="140" y="1000"/>
+	<position x="140" y="1040"/>
 	<column name="other">
 		<type name="smallint" length="1"/>
 	</column>
@@ -319,10 +319,10 @@ OB•Mosaïques romaines d'Orbe-Boscéaz•0106000020080800000100000001030000000
 	</column>
 </table>
 
-<table name="restorative_intervention">
+<table name="restorative_intervention" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="920"/>
+	<position x="960" y="980"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -335,21 +335,21 @@ OB•Mosaïques romaines d'Orbe-Boscéaz•0106000020080800000100000001030000000
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="restorative_intervention_pk" type="pk-constr" table="orbe_observations.restorative_intervention">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="restorative_intervention_types">
+<table name="restorative_intervention_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="920"/>
+	<position x="1760" y="1020"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -396,10 +396,10 @@ readhesion•readhesion•readhésion]]>
 	</initial-data>
 </table>
 
-<table name="preventive_intervention_types">
+<table name="preventive_intervention_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="1060"/>
+	<position x="1760" y="1160"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -419,10 +419,10 @@ reburial•reburial•réenfouissement]]>
 	</initial-data>
 </table>
 
-<table name="preventive_intervention">
+<table name="preventive_intervention" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="1060"/>
+	<position x="960" y="1140"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -432,21 +432,21 @@ reburial•reburial•réenfouissement]]>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="preventive_intervention_pk" type="pk-constr" table="orbe_observations.preventive_intervention">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="visual_alteration_types">
+<table name="visual_alteration_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="660"/>
+	<position x="1760" y="680"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -477,10 +477,10 @@ discoloration•discoloration•décoloration]]>
 	</initial-data>
 </table>
 
-<table name="structural_alteration_types">
+<table name="structural_alteration_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="380"/>
+	<position x="1760" y="400"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -506,10 +506,10 @@ depression•depression•affaissement]]>
 	</initial-data>
 </table>
 
-<table name="causes">
+<table name="causes" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="240"/>
+	<position x="1760" y="260"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -529,14 +529,15 @@ vegetation•vegetation•végétation⸣
 salts•salts•sels⸣
 water•water•eau⸣
 frost•frost•gel⸣
-intervention•intervention•intervention]]>
+intervention•intervention•intervention⸣
+fire•fire•feu]]>
 	</initial-data>
 </table>
 
-<table name="entity_types">
+<table name="entity_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="120"/>
+	<position x="1760" y="120"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -560,10 +561,10 @@ restored_zone•restored zone•zone restauré]]>
 	</initial-data>
 </table>
 
-<table name="entities">
+<table name="entities" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="120"/>
+	<position x="960" y="60"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -573,21 +574,21 @@ restored_zone•restored zone•zone restauré]]>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="entities_pk" type="pk-constr" table="orbe_observations.entities">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="missing_parts">
+<table name="missing_parts" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="240"/>
+	<position x="960" y="200"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -600,21 +601,21 @@ restored_zone•restored zone•zone restauré]]>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="missing_parts_pk" type="pk-constr" table="orbe_observations.missing_parts">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="material_alteration_types">
+<table name="material_alteration_types" hide-ext-attribs="true">
 	<schema name="orbe_value_lists"/>
 	<role name="orbe"/>
-	<position x="1580" y="520"/>
+	<position x="1760" y="540"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -647,10 +648,10 @@ corrosion•corrosion•corrosion]]>
 	</initial-data>
 </table>
 
-<table name="material_alterations">
+<table name="material_alterations" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="520"/>
+	<position x="960" y="520"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -663,21 +664,21 @@ corrosion•corrosion•corrosion]]>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="material_alterations_pk" type="pk-constr" table="orbe_observations.material_alterations">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="structural_alterations">
+<table name="structural_alterations" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="380"/>
+	<position x="960" y="360"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -690,21 +691,21 @@ corrosion•corrosion•corrosion]]>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="structural_alterations_pk" type="pk-constr" table="orbe_observations.structural_alterations">
 		<columns names="id" ref-type="src-columns"/>
 	</constraint>
 </table>
 
-<table name="visual_alterations">
+<table name="visual_alterations" hide-ext-attribs="true">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="880" y="660"/>
+	<position x="960" y="680"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -717,11 +718,11 @@ corrosion•corrosion•corrosion]]>
 	<column name="mosaic">
 		<type name="varchar" length="6"/>
 	</column>
-	<column name="geom">
-		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
-	</column>
 	<column name="observation_date" default-value="CURRENT_DATE">
 		<type name="date" length="0"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
 	</column>
 	<constraint name="visual_alterations_pk" type="pk-constr" table="orbe_observations.visual_alterations">
 		<columns names="id" ref-type="src-columns"/>
