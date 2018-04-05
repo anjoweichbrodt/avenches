@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.0" last-position="0,0" last-zoom="0.4"
+<dbmodel pgmodeler-ver="0.9.0" last-position="358,522" last-zoom="0.95"
 	 default-schema="public" default-owner="postgres">
 <role name="orbe">
 </role>
@@ -228,10 +228,10 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</initial-data>
 </table>
 
-<table name="material" hide-ext-attribs="true">
+<table name="material">
 	<schema name="orbe_observations"/>
 	<role name="orbe"/>
-	<position x="960" y="840"/>
+	<position x="1115.79" y="811.579"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
