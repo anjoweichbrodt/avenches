@@ -1,0 +1,1054 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.9.1" last-position="0,331" last-zoom="0.8"
+	 default-owner="postgres">
+<role name="orbe">
+</role>
+
+<role name="aventicum">
+</role>
+
+<database name="avenches" is-template="false" allow-conns="true" prepend-at-bod="true">
+	<prepended-sql><![CDATA[CREATE EXTENSION postgis;]]></prepended-sql>
+</database>
+
+<schema name="public" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<schema name="tra" rect-visible="true" fill-color="#925d63">
+	<role name="aventicum"/>
+</schema>
+
+<schema name="sites" rect-visible="true" fill-color="#e1e1e1">
+	<role name="orbe"/>
+</schema>
+
+<extension name="postgis">
+	<schema name="tra"/>
+</extension>
+
+<table name="surfaces">
+	<schema name="tra"/>
+	<role name="aventicum"/>
+	<position x="440" y="760"/>
+	<column name="name" not-null="true">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="wall_part">
+		<type name="varchar" length="6"/>
+	</column>
+	<column name="geom_frontal">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="0"/>
+	</column>
+	<column name="geom_3d">
+		<type name="geometry" length="0" spatial-type="POLYGON" variation="1" srid="2056"/>
+	</column>
+	<constraint name="surfaces_pk" type="pk-constr" table="tra.surfaces">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="monuments">
+	<schema name="sites"/>
+	<role name="orbe"/>
+	<position x="0" y="460"/>
+	<column name="code" not-null="true">
+		<type name="varchar" length="3"/>
+	</column>
+	<column name="name">
+		<type name="text" length="1"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="MULTIPOLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="scale">
+		<type name="int8" length="1"/>
+	</column>
+	<constraint name="monument_pk" type="pk-constr" table="sites.monuments">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="walls">
+	<schema name="tra"/>
+	<role name="aventicum"/>
+	<position x="240" y="460"/>
+	<column name="name" not-null="true">
+		<type name="varchar" length="4"/>
+	</column>
+	<column name="monument">
+		<type name="varchar" length="3"/>
+	</column>
+	<constraint name="walls_pk" type="pk-constr" table="tra.walls">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="sectors">
+	<schema name="tra"/>
+	<role name="aventicum"/>
+	<position x="240" y="580"/>
+	<column name="name" not-null="true">
+		<type name="varchar" length="3"/>
+	</column>
+	<column name="monument">
+		<type name="varchar" length="3"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<constraint name="sector_pk" type="pk-constr" table="tra.sectors">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="wall_parts">
+	<schema name="tra"/>
+	<role name="postgres"/>
+	<position x="440" y="500"/>
+	<column name="name" not-null="true">
+		<type name="varchar" length="7"/>
+	</column>
+	<column name="wall">
+		<type name="varchar" length="3"/>
+	</column>
+	<column name="sector">
+		<type name="varchar" length="3"/>
+	</column>
+	<constraint name="wall_parts_pk" type="pk-constr" table="tra.wall_parts">
+		<columns names="name" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<usertype name="exposition" configuration="enumeration">
+	<schema name="tra"/>
+	<role name="aventicum"/>
+	<enumeration values="S,SE,E,NE,N,NW,W,SW,VH,VB"/>
+</usertype>
+
+<schema name="tra_observations" rect-visible="true" fill-color="#cf7314">
+	<role name="aventicum"/>
+</schema>
+
+<table name="vegetation">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="500"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="type">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="vegetation_pk" type="pk-constr" table="tra_observations.vegetation">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<schema name="tra_value_lists" rect-visible="true" fill-color="#34dbb9">
+	<role name="aventicum"/>
+</schema>
+
+<table name="restorative_intervention">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="200"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="type">
+		<type name="text" length="1"/>
+	</column>
+	<column name="material">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="restorative_intervention_pk" type="pk-constr" table="tra_observations.restorative_intervention">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="restorative_intervention_types">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="180"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="restorative_intervention_types_pk" type="pk-constr" table="tra_value_lists.restorative_intervention_types">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+edge_reinforcement•edge reinforcement•protection des bords⸣
+edge_reinforcement.edge_reinforcement.framing•edge reinforcement.framing•protection des bords.encadrement⸣
+edge_reinforcement.edge_reinforcement.edging_repair•edge reinforcement.edging repair•protection des bords.solin⸣
+deposition/relaying•deposition/relaying•dépose/repose⸣
+deposition_relaying.deposition•deposition/relaying.deposition•dépose/repose.dépose⸣
+deposition_relaying.relaying•deposition/relaying.relaying•dépose/repose.repose⸣
+consolidation•consolidation•consolidation⸣
+consolidation.consolidation•consolidation.consolidation•consolidation.consolidation⸣
+consolidation.application_of_protective•consolidation.application of protective•consolidation.application de protective⸣
+consolidation.grouting•consolidation.grouting•consolidation.injection⸣
+surface_protection•surface protection•protection surface⸣
+surface_protection.application_of_protective•surface protection.application of protective•protection surface.application de protective⸣
+surface_protection.lining•surface protection.lining•protection surface.entoilage⸣
+joint_work•joint work•jointoyage⸣
+joint_work.joint_work•joint work.joint work•jointoyage.jointoyage⸣
+joint_work.dilatation_joint•joint work.dilatation joint•jointoyage.joint de dilatation⸣
+cleaning•cleaning•nettoyage⸣
+cleaning.stain_reduction•cleaning.stain reduction•nettoyage.réduction des tâches⸣
+cleaning.treatment_of_flora•cleaning.treatment of flora•nettoyage.traitement de la flore⸣
+treatment_of_missing_part•treatment of missing part•traitement de partie manquante⸣
+treatment_of_missing_part.reintegration_with_original_material•treatment of missing part.reintegration with original material•traitement de partie manquante.reintégration avec matériel original⸣
+treatment_of_missing_part.mortar_fill•treatment of missing part.mortar fill•traitement de partie manquante.bouchage⸣
+treatment_of_missing_part.chromatic_integration•treatment of missing part.chromatic integration•traitement de partie manquante.intégration chromatique⸣
+surface_finish•surface finish•finition surface⸣
+surface_finish.sanding•surface finish.sanding•finition surface.ponçage⸣
+salt_reduction•salt reduction•reduction des sels⸣
+salt_reduction.efflorescence_reduction•salt reduction.efflorescence reduction•reduction des sels.réduction des efflorescences⸣
+salt_reduction.compresse•salt reduction.compresse•reduction des sels.compresse⸣
+readhesion•readhesion•readhésion]]>
+	</initial-data>
+</table>
+
+<table name="preventive_intervention_types">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="1560"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="preventive_intervention_types_pk" type="pk-constr" table="tra_value_lists.preventive_intervention_types">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+drainage•drainage•drainage⸣
+reburial•reburial•réenfouissement]]>
+	</initial-data>
+</table>
+
+<table name="preventive_intervention">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="1560"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="type">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="preventive_intervention_pk" type="pk-constr" table="tra_observations.preventive_intervention">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="visual_alteration_types">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="820"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="visual_alteration_types_pk" type="pk-constr" table="tra_value_lists.visual_alteration_types">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+deposit•deposit•dépôt⸣
+deposit.excrement•deposit.excrement•dépôt.excrément⸣
+deposit.soiling•deposit.soiling•dépôt.encrassement⸣
+deposit.encrustation•deposit.encrustation•dépôt.encroûtement⸣
+deposit.efflorescence•deposit.efflorescence•dépôt.efflorescence⸣
+deposit.black_crust•deposit.black crust•dépôt.croûte noire⸣
+stain•stain•tâche⸣
+stain.red•stain.red•tâche.rouge⸣
+stain.green•stain.green•tâche.vert⸣
+stain.yellow•stain.yellow•tâche.jaune⸣
+stain.brown•stain.brown•tâche.brun⸣
+stain.black•stain.black•tâche.noir⸣
+discoloration•discoloration•décoloration]]>
+	</initial-data>
+</table>
+
+<table name="structural_alteration_types" hide-ext-attribs="true">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="1140"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="structural_alteration_types_pk" type="pk-constr" table="tra_value_lists.structural_alteration_types">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+fissuring•fissuring•fissuration⸣
+fissuring.fissure•fissuring.fissure•fissuration.fissure⸣
+fissuring.fragmenting•fissuring.fragmenting•fissuration.fragmentation⸣
+fissuring.fracture•fissuring.fracture•fissuration.fracture⸣
+bulging•bulging•soulèvement⸣
+bulging.bell•bulging.bell•soulèvement.cloche⸣
+bulging.rise•bulging.rise•soulèvement.bombement⸣
+depression•depression•affaissement]]>
+	</initial-data>
+</table>
+
+<table name="causes" hide-ext-attribs="true">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="1220"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="causes_pk" type="pk-constr" table="tra_value_lists.causes">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+vandalism•vandalism•vandalisme⸣
+vegetation•vegetation•végétation⸣
+salts•salts•sels⸣
+water•water•eau⸣
+frost•frost•gel⸣
+intervention•intervention•intervention]]>
+	</initial-data>
+</table>
+
+<table name="entity_types">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="1420"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="entity_types_fk" type="pk-constr" table="tra_value_lists.entity_types">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+tesselatum•tesselatum•tesselatum⸣
+joint•joint•joint⸣
+preparatory_layers•preparatory layers•couches de préparation⸣
+stone_work•stone work•maçonnerie⸣
+screed•screed•chape⸣
+restored_zone•restored zone•zone restauré]]>
+	</initial-data>
+</table>
+
+<table name="entities">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="1420"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="type">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="entities_pk" type="pk-constr" table="tra_observations.entities">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="missing_parts">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="1260"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="type">
+		<type name="text" length="1"/>
+	</column>
+	<column name="cause">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="missing_parts_pk" type="pk-constr" table="tra_observations.missing_parts">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="material_alteration_types">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="980"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="material_alteration_types_pk" type="pk-constr" table="tra_value_lists.material_alteration_types">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+detachement•detachement•détachement⸣
+detachement.bursting•detachement.bursting•détachement.éclatement⸣
+detachement.blistering•detachement.blistering•détachement.boursouflure⸣
+detachement.chipping•detachement.chipping•détachement.épaufrures⸣
+detachement.delamination•detachement.delamination•détachement.délitage⸣
+detachement.peeling•detachement.peeling•détachement.pelage⸣
+detachement.scaling•detachement.scaling•détachement.desquamation⸣
+detachement.flaking•detachement.flaking•détachement.écaillage⸣
+detachement.disadhesion•detachement.disadhesion•détachement.décollement⸣
+detachement.fragmentation•detachement.fragmentation•détachement.fragmentation⸣
+desintegration•desintegration•désintégration⸣
+desintegration.desintegration.alveolation•desintegration.alveolation•désintégration.alvéolation⸣
+desintegration.desintegration.coving•desintegration.coving•désintégration.creusement⸣
+desintegration.desintegration.pitting•desintegration.pitting•désintégration.pitting⸣
+corrosion•corrosion•corrosion]]>
+	</initial-data>
+</table>
+
+<table name="material_alterations">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="940"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="type">
+		<type name="text" length="1"/>
+	</column>
+	<column name="cause">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="material_alterations_pk" type="pk-constr" table="tra_observations.material_alterations">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="structural_alterations">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="1120"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="type">
+		<type name="text" length="1"/>
+	</column>
+	<column name="cause">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="structural_alterations_pk" type="pk-constr" table="tra_observations.structural_alterations">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="visual_alterations">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="780"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="type">
+		<type name="text" length="1"/>
+	</column>
+	<column name="cause">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="visual_alterations_pk" type="pk-constr" table="tra_observations.visual_alterations">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="material_types">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="360"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="material_types_pk" type="pk-constr" table="tra_value_lists.material_types">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+calcareous_stone•calcareous stone•pierre calcaire⸣
+calcareous_stone.hauterive_limestone•calcareous stone.Hauterive limestone•pierre calcaire.calcaire Hauterivien⸣
+calcareous_stone.metz_limestone•calcareous stone.Metz limestone•pierre calcaire.pierre de Metz⸣
+calcareous_stone.tuff•calcareous stone.tuff•pierre calcaire.tuf⸣
+molassic_stone•molassic stone•pierre molassique⸣
+molassic_stone.moliere_sandstone•molassic stone.Molière sandstone•pierre molassique.grès de la Molière⸣
+cementitious_mortar•cementitious mortar•mortier à base de ciment⸣
+cementitious_mortar.cementitious_mortar.high_cement_content_mortar•cementitious mortar.high cement content mortar•mortier à base de ciment.mortier haut contenue de ciment⸣
+cementitious_mortar.cementitious_mortar.low_cement_content_mortar•cementitious mortar.low cement content mortar•mortier à base de ciment.mortier bas contenue de ciment⸣
+cementitious_mortar.cementitious_mortar.roman_cement•cementitious mortar.roman cement•mortier à base de ciment.ciment romain⸣
+lime_based_mortar•lime based mortar•mortier à base de chaux⸣
+lime_based_mortar.lime_based_mortar.lime_mortar•lime based mortar.lime mortar•mortier à base de chaux.mortier chaux⸣
+lime_based_mortar.lime_based_mortar.lime_mortar_with_with_hydraulic_addition•lime based mortar.lime mortar with with hydraulic addition•mortier à base de chaux.mortier chaux et adjoint hydraulique⸣
+hydraulic_lime_based_mortar•hydraulic lime based mortar•mortier à base de chaux hydraulique⸣
+hydraulic_lime_based_mortar.nhl2_mortar•hydraulic lime based mortar.NHL2 mortar•mortier à base de chaux hydraulique.mortier NHL2⸣
+hydraulic_lime_based_mortar.nhl5_mortar•hydraulic lime based mortar.NHL5 mortar•mortier à base de chaux hydraulique.mortier NHL5⸣
+synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
+	</initial-data>
+</table>
+
+<table name="analysis">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="640"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="sample_description">
+		<type name="text" length="1"/>
+	</column>
+	<column name="test_goal">
+		<type name="text" length="1"/>
+	</column>
+	<column name="result">
+		<type name="text" length="1"/>
+	</column>
+	<column name="report">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POINT" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="analysis_pk" type="pk-constr" table="tra_observations.analysis">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="material">
+	<schema name="tra_observations"/>
+	<role name="aventicum"/>
+	<position x="800" y="360"/>
+	<column name="id" not-null="true">
+		<type name="serial" length="1"/>
+	</column>
+	<column name="type">
+		<type name="text" length="1"/>
+	</column>
+	<column name="surface">
+		<type name="varchar" length="10"/>
+	</column>
+	<column name="geom">
+		<type name="geometry" length="1" spatial-type="POLYGON" variation="0" srid="2056"/>
+	</column>
+	<column name="observation_date" default-value="CURRENT_DATE">
+		<type name="date" length="0"/>
+	</column>
+	<constraint name="material_pk" type="pk-constr" table="tra_observations.material">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="test_goals">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="580"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="test_goals_pk" type="pk-constr" table="tra_value_lists.test_goals">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+drilling_resistance•drilling resistance•résistance à la perforation⸣
+determination_of_flora•determination of flora•détermination da la flore⸣
+temperature_measurement•temperature mesaurement•mésuration de temperature⸣
+qualitative_salt_ion_analysis•qualitative salt ion analysis•détermination qualitative des ions de sel⸣
+quantitative_salt_ion_analysis•quantitative salt ion analysis•détermination quantitative des ions de sel⸣
+salt_crystal_analysis•salt crystal analysis•détermination de cristal de sel⸣
+stone_determination•stone determination•détermination de pierre]]>
+	</initial-data>
+</table>
+
+<table name="vegetation_types">
+	<schema name="tra_value_lists"/>
+	<role name="aventicum"/>
+	<position x="1180" y="480"/>
+	<column name="code" not-null="true">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_en">
+		<type name="text" length="1"/>
+	</column>
+	<column name="value_fr">
+		<type name="text" length="1"/>
+	</column>
+	<constraint name="vegetation_types_pk" type="pk-constr" table="tra_value_lists.vegetation_types">
+		<columns names="code" ref-type="src-columns"/>
+	</constraint>
+	<initial-data>
+<![CDATA[code•value_en•value_fr⸣
+tree•tree•arbre⸣
+shrub•shrub•arbuste⸣
+grass•grass•herbe⸣
+moss•moss•mousse⸣
+lichen•lichen•lichene⸣
+mold•mold•moisissure⸣
+alga•alga•alghe]]>
+	</initial-data>
+</table>
+
+<constraint name="surface_wall_part_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra.wall_parts" table="tra.surfaces">
+	<columns names="wall_part" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="wall_fk_monument" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="sites.monuments" table="tra.walls">
+	<columns names="monument" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="sector_fk_monument" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="sites.monuments" table="tra.sectors">
+	<columns names="monument" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="wall_parts_fk_wall" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra.walls" table="tra.wall_parts">
+	<columns names="wall" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="wall_parts_fk_sector" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="tra.sectors" table="tra.wall_parts">
+	<columns names="sector" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="vegetation_fk_vegetation_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="tra_value_lists.vegetation_types" table="tra_observations.vegetation">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="vegetation_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.vegetation">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="restorative_intervention_fk_material_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra_value_lists.material_types" table="tra_observations.restorative_intervention">
+	<columns names="material" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="restorative_intervention_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.restorative_intervention">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="restorative_intervention_fk_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra_value_lists.restorative_intervention_types" table="tra_observations.restorative_intervention">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="preventive_intervention_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.preventive_intervention">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="preventive_intervention_fk_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra_value_lists.preventive_intervention_types" table="tra_observations.preventive_intervention">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="entities_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.entities">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="entities_fk_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra_value_lists.entity_types" table="tra_observations.entities">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="missing_parts_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.missing_parts">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="missing_parts_fk_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra_value_lists.entity_types" table="tra_observations.missing_parts">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="missing_parts_cause_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="tra_value_lists.causes" table="tra_observations.missing_parts">
+	<columns names="cause" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="material_alterations_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.material_alterations">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="material_alterations_fk_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra_value_lists.material_alteration_types" table="tra_observations.material_alterations">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="material_alterations_cause_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="tra_value_lists.causes" table="tra_observations.material_alterations">
+	<columns names="cause" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="structural_alterations_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.structural_alterations">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="structural_alterations_fk_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra_value_lists.structural_alteration_types" table="tra_observations.structural_alterations">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="structural_alterations_cause_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="tra_value_lists.causes" table="tra_observations.structural_alterations">
+	<columns names="cause" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="visual_alterations_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.visual_alterations">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="visual_alterations_cause_fk" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="tra_value_lists.causes" table="tra_observations.visual_alterations">
+	<columns names="cause" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="visual_alterations_fk_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="tra_value_lists.visual_alteration_types" table="tra_observations.visual_alterations">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="analysis_fk_test_goal" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="RESTRICT" del-action="RESTRICT" ref-table="tra_value_lists.test_goals" table="tra_observations.analysis">
+	<columns names="test_goal" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="analysis_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.analysis">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="material_fk_material_type" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="NO ACTION" del-action="NO ACTION" ref-table="tra_value_lists.material_types" table="tra_observations.material">
+	<columns names="type" ref-type="src-columns"/>
+	<columns names="code" ref-type="dst-columns"/>
+</constraint>
+
+<constraint name="material_fk_surface" type="fk-constr" comparison-type="MATCH FULL"
+	 upd-action="CASCADE" del-action="CASCADE" ref-table="tra.surfaces" table="tra_observations.material">
+	<columns names="surface" ref-type="src-columns"/>
+	<columns names="name" ref-type="dst-columns"/>
+</constraint>
+
+<relationship name="rel_surfaces_wall_parts" type="relfk"
+	 src-table="tra.surfaces"
+	 dst-table="tra.wall_parts" reference-fk="surface_wall_part_fk"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_walls_monuments" type="relfk"
+	 src-table="tra.walls"
+	 dst-table="sites.monuments" reference-fk="wall_fk_monument"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_sector_monuments" type="relfk"
+	 src-table="tra.sectors"
+	 dst-table="sites.monuments" reference-fk="sector_fk_monument"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_wall_parts_walls" type="relfk"
+	 src-table="tra.wall_parts"
+	 dst-table="tra.walls" reference-fk="wall_parts_fk_wall"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_vegetation_vegetation_types" type="relfk"
+	 src-table="tra_observations.vegetation"
+	 dst-table="tra_value_lists.vegetation_types" reference-fk="vegetation_fk_vegetation_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_vegetation_surfaces" type="relfk"
+	 src-table="tra_observations.vegetation"
+	 dst-table="tra.surfaces" reference-fk="vegetation_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_restorative_intervention_material_types" type="relfk"
+	 src-table="tra_observations.restorative_intervention"
+	 dst-table="tra_value_lists.material_types" reference-fk="restorative_intervention_fk_material_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_restorative_intervention_surfaces" type="relfk"
+	 src-table="tra_observations.restorative_intervention"
+	 dst-table="tra.surfaces" reference-fk="restorative_intervention_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_restorative_intervention_restorative_intervention_types" type="relfk"
+	 src-table="tra_observations.restorative_intervention"
+	 dst-table="tra_value_lists.restorative_intervention_types" reference-fk="restorative_intervention_fk_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_preventive_intervention_surfaces" type="relfk"
+	 src-table="tra_observations.preventive_intervention"
+	 dst-table="tra.surfaces" reference-fk="preventive_intervention_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_preventive_intervention_preventive_intervention_types" type="relfk"
+	 src-table="tra_observations.preventive_intervention"
+	 dst-table="tra_value_lists.preventive_intervention_types" reference-fk="preventive_intervention_fk_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_entities_surfaces" type="relfk"
+	 src-table="tra_observations.entities"
+	 dst-table="tra.surfaces" reference-fk="entities_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_entities_entity_types" type="relfk"
+	 src-table="tra_observations.entities"
+	 dst-table="tra_value_lists.entity_types" reference-fk="entities_fk_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_missing_parts_surfaces" type="relfk"
+	 src-table="tra_observations.missing_parts"
+	 dst-table="tra.surfaces" reference-fk="missing_parts_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_missing_parts_entity_types" type="relfk"
+	 src-table="tra_observations.missing_parts"
+	 dst-table="tra_value_lists.entity_types" reference-fk="missing_parts_fk_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_missing_parts_causes" type="relfk"
+	 src-table="tra_observations.missing_parts"
+	 dst-table="tra_value_lists.causes" reference-fk="missing_parts_cause_fk"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_material_alterations_surfaces" type="relfk"
+	 src-table="tra_observations.material_alterations"
+	 dst-table="tra.surfaces" reference-fk="material_alterations_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_material_alterations_material_alteration_types" type="relfk"
+	 src-table="tra_observations.material_alterations"
+	 dst-table="tra_value_lists.material_alteration_types" reference-fk="material_alterations_fk_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_material_alterations_causes" type="relfk"
+	 src-table="tra_observations.material_alterations"
+	 dst-table="tra_value_lists.causes" reference-fk="material_alterations_cause_fk"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_structural_alterations_surfaces" type="relfk"
+	 src-table="tra_observations.structural_alterations"
+	 dst-table="tra.surfaces" reference-fk="structural_alterations_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_structural_alterations_structural_alteration_types" type="relfk"
+	 src-table="tra_observations.structural_alterations"
+	 dst-table="tra_value_lists.structural_alteration_types" reference-fk="structural_alterations_fk_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_structural_alterations_causes" type="relfk"
+	 src-table="tra_observations.structural_alterations"
+	 dst-table="tra_value_lists.causes" reference-fk="structural_alterations_cause_fk"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_visual_alterations_surfaces" type="relfk"
+	 src-table="tra_observations.visual_alterations"
+	 dst-table="tra.surfaces" reference-fk="visual_alterations_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_visual_alterations_causes" type="relfk"
+	 src-table="tra_observations.visual_alterations"
+	 dst-table="tra_value_lists.causes" reference-fk="visual_alterations_cause_fk"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_visual_alterations_visual_alteration_types" type="relfk"
+	 src-table="tra_observations.visual_alterations"
+	 dst-table="tra_value_lists.visual_alteration_types" reference-fk="visual_alterations_fk_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_analysis_test_goals" type="relfk"
+	 src-table="tra_observations.analysis"
+	 dst-table="tra_value_lists.test_goals" reference-fk="analysis_fk_test_goal"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_analysis_surfaces" type="relfk"
+	 src-table="tra_observations.analysis"
+	 dst-table="tra.surfaces" reference-fk="analysis_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_material_material_types" type="relfk"
+	 src-table="tra_observations.material"
+	 dst-table="tra_value_lists.material_types" reference-fk="material_fk_material_type"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_material_surfaces" type="relfk"
+	 src-table="tra_observations.material"
+	 dst-table="tra.surfaces" reference-fk="material_fk_surface"
+	 src-required="false" dst-required="false"/>
+
+<relationship name="rel_wall_parts_sector" type="relfk"
+	 src-table="tra.wall_parts"
+	 dst-table="tra.sectors" reference-fk="wall_parts_fk_sector"
+	 src-required="false" dst-required="false"/>
+
+</dbmodel>
