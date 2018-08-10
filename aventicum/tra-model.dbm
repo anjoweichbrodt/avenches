@@ -3,7 +3,7 @@
 CAUTION: Do not modify this file unless you know what you are doing.
          Unexpected results may occur if the code is changed deliberately.
 -->
-<dbmodel pgmodeler-ver="0.9.1" last-position="0,331" last-zoom="0.8"
+<dbmodel pgmodeler-ver="0.9.1" last-position="0,0" last-zoom="0.55"
 	 default-owner="postgres">
 <role name="orbe">
 </role>
@@ -11,7 +11,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <role name="aventicum">
 </role>
 
-<database name="avenches" is-template="false" allow-conns="true" prepend-at-bod="true">
+<role name="anjo.weichbrodt">
+</role>
+
+<database name="tra" is-template="false" allow-conns="true" prepend-at-bod="true">
 	<prepended-sql><![CDATA[CREATE EXTENSION postgis;]]></prepended-sql>
 </database>
 
@@ -30,10 +33,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<schema name="tra"/>
 </extension>
 
-<table name="surfaces">
+<table name="surfaces" hide-ext-attribs="true">
 	<schema name="tra"/>
 	<role name="aventicum"/>
-	<position x="440" y="760"/>
+	<position x="460" y="1000"/>
 	<column name="name" not-null="true">
 		<type name="varchar" length="10"/>
 	</column>
@@ -54,7 +57,7 @@ CAUTION: Do not modify this file unless you know what you are doing.
 <table name="monuments">
 	<schema name="sites"/>
 	<role name="orbe"/>
-	<position x="0" y="460"/>
+	<position x="0" y="440"/>
 	<column name="code" not-null="true">
 		<type name="varchar" length="3"/>
 	</column>
@@ -72,10 +75,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<table name="walls">
+<table name="walls" hide-ext-attribs="true">
 	<schema name="tra"/>
 	<role name="aventicum"/>
-	<position x="240" y="460"/>
+	<position x="220" y="680"/>
 	<column name="name" not-null="true">
 		<type name="varchar" length="4"/>
 	</column>
@@ -87,10 +90,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<table name="sectors">
+<table name="sectors" hide-ext-attribs="true">
 	<schema name="tra"/>
 	<role name="aventicum"/>
-	<position x="240" y="580"/>
+	<position x="480" y="260"/>
 	<column name="name" not-null="true">
 		<type name="varchar" length="3"/>
 	</column>
@@ -105,10 +108,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<table name="wall_parts">
+<table name="wall_parts" hide-ext-attribs="true">
 	<schema name="tra"/>
 	<role name="postgres"/>
-	<position x="440" y="500"/>
+	<position x="540" y="680"/>
 	<column name="name" not-null="true">
 		<type name="varchar" length="7"/>
 	</column>
@@ -133,10 +136,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="aventicum"/>
 </schema>
 
-<table name="vegetation">
+<table name="vegetation" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="500"/>
+	<position x="1040" y="1240"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -161,10 +164,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	<role name="aventicum"/>
 </schema>
 
-<table name="restorative_intervention">
+<table name="restorative_intervention" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="200"/>
+	<position x="1040" y="940"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -188,10 +191,10 @@ CAUTION: Do not modify this file unless you know what you are doing.
 	</constraint>
 </table>
 
-<table name="restorative_intervention_types">
+<table name="restorative_intervention_types" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="180"/>
+	<position x="1560" y="940"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -238,10 +241,10 @@ readhesion•readhesion•readhésion]]>
 	</initial-data>
 </table>
 
-<table name="preventive_intervention_types">
+<table name="preventive_intervention_types" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="1560"/>
+	<position x="1560" y="1080"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -261,10 +264,10 @@ reburial•reburial•réenfouissement]]>
 	</initial-data>
 </table>
 
-<table name="preventive_intervention">
+<table name="preventive_intervention" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="1560"/>
+	<position x="1040" y="1100"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -285,10 +288,10 @@ reburial•reburial•réenfouissement]]>
 	</constraint>
 </table>
 
-<table name="visual_alteration_types">
+<table name="visual_alteration_types" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="820"/>
+	<position x="1560" y="660"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -322,7 +325,7 @@ discoloration•discoloration•décoloration]]>
 <table name="structural_alteration_types" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="1140"/>
+	<position x="1560" y="380"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -351,7 +354,7 @@ depression•depression•affaissement]]>
 <table name="causes" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="1220"/>
+	<position x="1560" y="240"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -375,10 +378,10 @@ intervention•intervention•intervention]]>
 	</initial-data>
 </table>
 
-<table name="entity_types">
+<table name="entity_types" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="1420"/>
+	<position x="1560" y="100"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -393,19 +396,18 @@ intervention•intervention•intervention]]>
 	</constraint>
 	<initial-data>
 <![CDATA[code•value_en•value_fr⸣
-tesselatum•tesselatum•tesselatum⸣
 joint•joint•joint⸣
-preparatory_layers•preparatory layers•couches de préparation⸣
 stone_work•stone work•maçonnerie⸣
 screed•screed•chape⸣
-restored_zone•restored zone•zone restauré]]>
+restored_zone•restored zone•zone restauré⸣
+demarcation_line•demarcation line•ligne de démarcation]]>
 	</initial-data>
 </table>
 
-<table name="entities">
+<table name="entities" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="1420"/>
+	<position x="1040" y="20"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -426,10 +428,10 @@ restored_zone•restored zone•zone restauré]]>
 	</constraint>
 </table>
 
-<table name="missing_parts">
+<table name="missing_parts" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="1260"/>
+	<position x="1040" y="160"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -453,10 +455,10 @@ restored_zone•restored zone•zone restauré]]>
 	</constraint>
 </table>
 
-<table name="material_alteration_types">
+<table name="material_alteration_types" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="980"/>
+	<position x="1560" y="520"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -489,10 +491,10 @@ corrosion•corrosion•corrosion]]>
 	</initial-data>
 </table>
 
-<table name="material_alterations">
+<table name="material_alterations" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="940"/>
+	<position x="1040" y="480"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -516,10 +518,10 @@ corrosion•corrosion•corrosion]]>
 	</constraint>
 </table>
 
-<table name="structural_alterations">
+<table name="structural_alterations" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="1120"/>
+	<position x="1040" y="320"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -543,10 +545,10 @@ corrosion•corrosion•corrosion]]>
 	</constraint>
 </table>
 
-<table name="visual_alterations">
+<table name="visual_alterations" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="780"/>
+	<position x="1040" y="640"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -570,10 +572,10 @@ corrosion•corrosion•corrosion]]>
 	</constraint>
 </table>
 
-<table name="material_types">
+<table name="material_types" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="360"/>
+	<position x="1560" y="800"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -608,10 +610,10 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</initial-data>
 </table>
 
-<table name="analysis">
+<table name="analysis" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="640"/>
+	<position x="1040" y="1380"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -641,10 +643,10 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</constraint>
 </table>
 
-<table name="material">
+<table name="material" hide-ext-attribs="true">
 	<schema name="tra_observations"/>
 	<role name="aventicum"/>
-	<position x="800" y="360"/>
+	<position x="1040" y="800"/>
 	<column name="id" not-null="true">
 		<type name="serial" length="1"/>
 	</column>
@@ -665,10 +667,10 @@ synthetic_consolidant•synthetic consolidant•consolidant synthétique]]>
 	</constraint>
 </table>
 
-<table name="test_goals">
+<table name="test_goals" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="580"/>
+	<position x="1560" y="1360"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
@@ -693,10 +695,10 @@ stone_determination•stone determination•détermination de pierre]]>
 	</initial-data>
 </table>
 
-<table name="vegetation_types">
+<table name="vegetation_types" hide-ext-attribs="true">
 	<schema name="tra_value_lists"/>
 	<role name="aventicum"/>
-	<position x="1180" y="480"/>
+	<position x="1560" y="1220"/>
 	<column name="code" not-null="true">
 		<type name="text" length="1"/>
 	</column>
