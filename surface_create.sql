@@ -65,7 +65,7 @@ END; $BODY$
   COST 100;
 ALTER FUNCTION tra.surface_create_insert()
   OWNER TO qgis;
-x
+
 CREATE TRIGGER surface_create_on_insert
   INSTEAD OF INSERT
   ON tra.surface_create
