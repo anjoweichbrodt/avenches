@@ -46,7 +46,7 @@ BEGIN
            CONCAT(
              CONCAT(NEW.sector,'_' ,COALESCE(NEW.wall, split_part(NEW.atlas_name,'-' ,1)))
              , '-', COALESCE(regexp_replace(split_part(split_part(NEW.atlas_name,'-' ,2), '_', 1), 'O', 'W')::tra.exposition, NEW.exposition)
-             , '-' || NULLIF(split_part(split_part(NEW.atlas_name, '-', 3), '_', 1), NEW.surface_part)),
+             , '-' || COALESCE(NULLIF(split_part(split_part(NEW.atlas_name, '-', 3), '_', 1), ''), NEW.surface_part::text)),
            ST_SetSRID(ST_MakePolygon(
              ST_MakeLine(ARRAY[
                ST_MakePoint(ST_X(ST_PointN(NEW.baseline, 1)), ST_Y(ST_PointN(NEW.baseline, 1)), COALESCE(import_surface.minimum_level, NEW.minimum_level)),
