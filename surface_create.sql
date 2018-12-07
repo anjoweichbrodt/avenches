@@ -1,4 +1,4 @@
-﻿DROP VIEW tra.surface_create;
+DROP VIEW tra.surface_create;
 
 CREATE OR REPLACE VIEW tra.surface_create AS 
  SELECT surfaces.name,
@@ -82,35 +82,9 @@ CREATE TRIGGER surface_create_on_insert
 CREATE OR REPLACE FUNCTION tra.surface_create_update()
   RETURNS trigger AS
 $BODY$
-DECLARE
-  import_surface RECORD;
-  minx numeric(10,2);
-  maxx numeric(10,2);
 BEGIN
-  SELECT
-  COALESCE(ST_YMIN(wkb_geometry), NEW.minimum_level) AS minimum_level,
-  COALESCE(ST_YMAX(wkb_geometry), NEW.maximum_level) AS maximum_level,
-  wkb_geometry
-  INTO import_surface
-  FROM import.surfaces
-  WHERE nomatlas = NEW.atlas_name;
-
- 
-  UPDATE tra.surfaces 
-     SET geom_3d =ST_SetSRID(ST_MakePolygon(
-             ST_MakeLine(ARRAY[
-               ST_MakePoint(ST_X(ST_PointN(NEW.baseline, 1)), ST_Y(ST_PointN(NEW.baseline, 1)), COALESCE(import_surface.minimum_level, NEW.minimum_level)),
-               ST_MakePoint(ST_X(ST_PointN(NEW.baseline, 2)), ST_Y(ST_PointN(NEW.baseline, 2)), COALESCE(import_surface.minimum_level, NEW.minimum_level)),
-               ST_MakePoint(ST_X(ST_PointN(NEW.baseline, 2)), ST_Y(ST_PointN(NEW.baseline, 2)), COALESCE(import_surface.maximum_level, NEW.maximum_level)),
-               ST_MakePoint(ST_X(ST_PointN(NEW.baseline, 1)), ST_Y(ST_PointN(NEW.baseline, 1)), COALESCE(import_surface.maximum_level, NEW.maximum_level)),
-               ST_MakePoint(ST_X(ST_PointN(NEW.baseline, 1)), ST_Y(ST_PointN(NEW.baseline, 1)), COALESCE(import_surface.minimum_level, NEW.minimum_level))
-             ])
-           ), 2056),
-         geom_frontal = ST_SetSRID(import_surface.wkb_geometry, 1),
-         exposition = COALESCE(regexp_replace(split_part(split_part(NEW.atlas_name,'-' ,2), '_', 1), 'O', 'W')::tra.exposition, NEW.exposition),
-         wall_part = CONCAT(NEW.sector,'_' ,COALESCE(NEW.wall, split_part(NEW.atlas_name,'-' ,1))),
-         surface_part = COALESCE(NULLIF(split_part(split_part(NEW.atlas_name, '-', 3), '_', 1), '')::smallint, NEW.surface_part)
-     WHERE name = OLD.name;
+     RAISE EXCEPTION 'Can not change features on the view surface_create. Use the table directly. Layers `surface_frontal` and `surface_VH`.';
+     RETURN NEW;
 END; $BODY$
   LANGUAGE plpgsql VOLATILE
   COST 100;
@@ -122,4 +96,4 @@ CREATE TRIGGER surface_create_on_update
   INSTEAD OF UPDATE
   ON tra.surface_create
   FOR EACH ROW
-  EXECUTE PROCEDURE tra.surface_create_update();
+EXECUTE PROCEDURE tra.surface_create_update();
