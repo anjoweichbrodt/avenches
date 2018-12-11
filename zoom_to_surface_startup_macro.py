@@ -13,11 +13,13 @@ iface = qgis.utils.iface
 
 def openProject():
     def zoomTo(name):
+        project = QgsProject.instance()
         layer = QgsProject.instance().mapLayersByName('surfaces frontal')[0]
         filter_expression = 'name = \'{name}\''.format(name=name)
         feature = next(layer.getFeatures(filter_expression))
         box = feature.geometry().boundingBox()
         box = box.buffered(box.width()/10)
+        QgsExpressionContextUtils.setProjectVariable(project,'pseudo_atlas_feature',name)
         iface.mapCanvas().setExtent(box)
         iface.mapCanvas().refresh()
 
